@@ -186,7 +186,7 @@ html {
 }
 .card__reactorData {
   height: 185px;
-  width: 300px;
+  width: 245px;
   padding: 1rem;
   border: 2px solid var(--grey);
   border-radius: 4px;
@@ -199,11 +199,11 @@ html {
   display: flex;
 }
 .reactorData__icon {
-  font-size: 1.35rem;
+  font-size: 1.55rem;
   margin-right: 1rem;
 }
 .reactorData__detail {
-  font-size: 1.35rem;
+  font-size: 1.55rem;
   font-weight: 600;
   margin: 0 0 0.25rem 0;
 }
@@ -268,6 +268,13 @@ pre > span {
 
 /* sm */
 @media screen and (max-width: 530px) {
+  /* Header & Nav */
+  .section__header {
+    padding: 0 1.15rem;
+  }
+  .navList {
+    gap: 1rem;
+  }
   /* Landing Page search form */
   .searchBtn {
     width: 100%;
