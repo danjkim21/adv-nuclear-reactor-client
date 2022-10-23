@@ -17,7 +17,7 @@ function OverviewCards({ reactorData }) {
       <div className="card__reactorData">
         <h3 className="card__title">Reactor Type</h3>
         <div className="subcontainer__cardDetail">
-          <i class="fa-solid fa-atom reactorData__icon"></i>
+          <i className="fa-solid fa-atom reactorData__icon"></i>
           <div>
             <p className="reactorData__detail">{reactorData[0].type}</p>
           </div>
@@ -27,7 +27,7 @@ function OverviewCards({ reactorData }) {
       <div className="card__reactorData">
         <h3 className="card__title">Elec. Output, MWe</h3>
         <div className="subcontainer__cardDetail">
-          <i class="fa-regular fa-lightbulb reactorData__icon"></i>
+          <i className="fa-regular fa-lightbulb reactorData__icon"></i>
           <div>
             <p className="reactorData__detail">
               {reactorData[0].outputGross} (gross)
@@ -40,7 +40,7 @@ function OverviewCards({ reactorData }) {
       <div className="card__reactorData">
         <h3 className="card__title">Thermal Output, MWth</h3>
         <div className="subcontainer__cardDetail">
-          <i class="fa-solid fa-fire-flame-simple reactorData__icon"></i>
+          <i className="fa-solid fa-fire-flame-simple reactorData__icon"></i>
           <div>
             <p className="reactorData__detail">{reactorData[0].thermalOutput}</p>
           </div>

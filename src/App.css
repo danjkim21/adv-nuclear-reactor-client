@@ -2,13 +2,17 @@
 :root {
   /* Base Colors */
   --white: #ffffff;
-  --grey: #d9d9d9;
+  --grey: #e3e3e3;
+  --grey__medium: #242424;
   --grey__dark: #25292e;
   --black: #000000;
   --purple__primary: #473eb3;
   --purple__secondary: #5d51e4;
+  --purple__accent--primary: #656cf6;
+  --purple__accent2--secondary: #bdc0fa;
   --purple__medium: #938fb9;
   --purple__light: #dcdbe5;
+  --purple__grey: #292934;
 }
 
 /************* General Styling *************/
@@ -151,13 +155,13 @@ html {
 
 /* Reactor Input Display area */
 .section__displayArea * {
-  color: var(--white);
+  color: var(--grey);
 }
 .section__displayArea {
   height: auto;
   padding-top: 6.25rem;
   padding-bottom: 6.25rem;
-  background-color: var(--grey__dark);
+  background-color: var(--grey__medium);
 }
 .title__reactorName {
   font-size: 2.5rem;
@@ -169,7 +173,7 @@ html {
   font-weight: 600;
 }
 .subtitle__link {
-  color: var(--purple__secondary);
+  color: var(--purple__accent--primary);
   text-decoration: none;
 }
 .subtitle__link:hover {
@@ -188,21 +192,24 @@ html {
   height: 185px;
   width: 245px;
   padding: 1rem;
-  border: 2px solid var(--grey);
+  background-color: var(--purple__grey);
+  border: 1px solid var(--purple__accent--primary);
   border-radius: 4px;
 }
 .card__title {
-  color: var(--grey);
+  color: var(--purple__accent2--secondary);
   margin-top: 0;
 }
 .subcontainer__cardDetail {
   display: flex;
 }
 .reactorData__icon {
+  color: var(--purple__accent2--secondary);
   font-size: 1.55rem;
   margin-right: 1rem;
 }
 .reactorData__detail {
+  color: var(--purple__accent2--secondary);
   font-size: 1.55rem;
   font-weight: 600;
   margin: 0 0 0.25rem 0;
