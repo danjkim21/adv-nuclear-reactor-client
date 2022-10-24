@@ -1,11 +1,11 @@
 import '../App.css';
 
-function OverviewTable({ reactorData }) {
+function TableOverview({ reactorData }) {
   return (
     <>
-      <div className="container container__overview">
+      <div className="container container__table">
         <h3 className="container__title">Overview</h3>
-        <table className="table">
+        <table className="table table__reactor">
           <tbody>
             <tr>
               <td>Vendor</td>
@@ -64,4 +64,4 @@ function OverviewTable({ reactorData }) {
   );
 }
 
-export default OverviewTable;
+export default TableOverview;

@@ -3,7 +3,7 @@ import '../App.css';
 function OverviewCards({ reactorData }) {
   return (
     <div className="container container__cards">
-      <div className="card__reactorData">
+      <div className="card--dark card__reactorData">
         <h3 className="card__title">Vendor</h3>
         <div className="subcontainer__cardDetail">
           <i className="fa-solid fa-globe reactorData__icon"></i>
@@ -14,7 +14,7 @@ function OverviewCards({ reactorData }) {
         </div>
       </div>
 
-      <div className="card__reactorData">
+      <div className="card--dark card__reactorData">
         <h3 className="card__title">Reactor Type</h3>
         <div className="subcontainer__cardDetail">
           <i className="fa-solid fa-atom reactorData__icon"></i>
@@ -24,7 +24,7 @@ function OverviewCards({ reactorData }) {
         </div>
       </div>
 
-      <div className="card__reactorData">
+      <div className="card--dark card__reactorData">
         <h3 className="card__title">Elec. Output, MWe</h3>
         <div className="subcontainer__cardDetail">
           <i className="fa-regular fa-lightbulb reactorData__icon"></i>
@@ -37,7 +37,7 @@ function OverviewCards({ reactorData }) {
         </div>
       </div>
 
-      <div className="card__reactorData">
+      <div className="card--dark card__reactorData">
         <h3 className="card__title">Thermal Output, MWth</h3>
         <div className="subcontainer__cardDetail">
           <i className="fa-solid fa-fire-flame-simple reactorData__icon"></i>

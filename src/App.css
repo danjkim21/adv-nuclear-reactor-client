@@ -33,6 +33,16 @@ html {
   max-width: 800px;
   margin-bottom: 3rem;
 }
+.card--dark {
+  background-color: var(--purple__grey);
+  border: 1px solid var(--purple__accent--primary);
+  border-radius: 4px;
+}
+.card--light {
+  background-color: rgb(243 243 254);
+  border: 1px solid rgb(101 108 246);
+  border-radius: 4px;
+}
 
 /************* Header Component Styling *************/
 .section__header {
@@ -127,6 +137,9 @@ html {
   font-weight: 500;
   margin: 0;
 }
+.link__actionIcon {
+  color: var(--black);
+}
 .button__actionIcon {
   font-size: 1.75rem;
   position: absolute;
@@ -165,10 +178,11 @@ html {
 }
 .title__reactorName {
   font-size: 2.5rem;
+  line-height: 2.5rem;
   margin-bottom: 0;
 }
 .subtitle__reactorFullName {
-  margin-top: 0.65rem;
+  margin-top: 0.35rem;
   font-size: 1.25rem;
   font-weight: 600;
 }
@@ -192,9 +206,6 @@ html {
   height: 185px;
   width: 245px;
   padding: 1rem;
-  background-color: var(--purple__grey);
-  border: 1px solid var(--purple__accent--primary);
-  border-radius: 4px;
 }
 .card__title {
   color: var(--purple__accent2--secondary);
@@ -213,6 +224,14 @@ html {
   font-size: 1.55rem;
   font-weight: 600;
   margin: 0 0 0.25rem 0;
+}
+.container__tables {
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0 4rem;
+  flex-wrap: wrap;
 }
 
 /************* '/about' route styling About Page Styling *************/
@@ -251,15 +270,17 @@ pre {
   word-break: break-all;
   max-width: 850px;
   padding: 1rem 1rem;
-  background-color: var(--white);
-  border: 1px solid var(--purple__medium);
+  font-family: inter;
+  color: var(--grey);
+  background-color: var(--grey__medium);
+  border: 1px solid var(--grey__medium);
   border-radius: 4px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 pre > span {
   font-weight: 700;
-  color: var(--purple__primary);
+  color: var(--purple__accent--primary);
 }
 .list__reactors {
   padding-left: 0;
@@ -297,5 +318,27 @@ pre > span {
   .section__about,
   .section__login {
     padding: 100px 1rem;
+  }
+  /* Reactor display Cards */
+  .title__reactorName {
+    font-size: 2.15rem;
+    line-height: 2.15rem;
+  }
+  .container__cards {
+    gap: 0.55rem;
+  }
+  .card__reactorData {
+    height: 165px;
+    width: 170px;
+    padding: 1rem;
+  }
+  .card__title {
+    font-size: 1rem;
+  }
+  .reactorData__icon {
+    font-size: 1.15rem;
+  }
+  .reactorData__detail {
+    font-size: 1.15rem;
   }
 }

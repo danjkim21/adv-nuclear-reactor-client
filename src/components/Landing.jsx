@@ -15,9 +15,7 @@ function Landing({ data }) {
     const inputedReactor = e.target.elements.searchReactor.value;
 
     const fetchReactorData = async () => {
-      const response = await fetch(
-        `https://ardb.cyclic.app/api/${inputedReactor}`
-      );
+      const response = await fetch(`https://ardb.cyclic.app/api/${inputedReactor}`);
       const json = await response.json();
       setReactorData(json);
     };
@@ -44,9 +42,14 @@ function Landing({ data }) {
         {isActive && (
           <>
             <div className="container__actionIcon">
-              <span className="button__actionIcon">
-                <i className="actionIcon fa-solid fa-arrow-down"></i>
-              </span>
+              <a
+                className="link__actionIcon"
+                href="#displayResultArea"
+              >
+                <span className="button__actionIcon">
+                  <i className="actionIcon fa-solid fa-arrow-down"></i>
+                </span>
+              </a>
             </div>
           </>
         )}

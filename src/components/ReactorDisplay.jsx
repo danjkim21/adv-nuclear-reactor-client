@@ -1,6 +1,10 @@
 import '../App.css';
-import OverviewCards from './OverviewCards'
-import OverviewTable from './OverviewTable';
+import OverviewCards from './OverviewCards';
+import TableOverview from './TableOverview';
+import TableCoolantSys from './TableCoolantSys';
+import TableCore from './TableCore';
+import TableMaterials from './TableMaterials';
+import TablePressureVessel from './TablePressureVessel';
 
 function ReactorDisplay({ reactorData }) {
   return (
@@ -22,8 +26,17 @@ function ReactorDisplay({ reactorData }) {
           </a>
         </p>
       </div>
+      {/* Topline Data */}
       <OverviewCards reactorData={reactorData} />
-      <OverviewTable reactorData={reactorData} />
+
+      {/* Table Data Extended */}
+      <div className="container container__tables">
+        <TableOverview reactorData={reactorData} />
+        <TableCoolantSys reactorData={reactorData} />
+        <TableCore reactorData={reactorData} />
+        <TableMaterials reactorData={reactorData} />
+        <TablePressureVessel reactorData={reactorData} />
+      </div>
     </section>
   );
 }
