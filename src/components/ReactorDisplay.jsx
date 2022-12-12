@@ -8,21 +8,18 @@ import TablePressureVessel from './TablePressureVessel';
 
 function ReactorDisplay({ reactorData }) {
   return (
-    <section
-      id="displayResultArea"
-      className="section__displayArea"
-    >
-      <div className="container container__reactorTitle">
-        <h2 className="title__reactorName">{reactorData[0].name} </h2>
-        <p className="subtitle__reactorFullName">
+    <section id='displayResultArea' className='section__displayArea'>
+      <div className='container container__reactorTitle'>
+        <h2 className='title__reactorName'>{reactorData.name} </h2>
+        <p className='subtitle__reactorFullName'>
           <a
-            className="subtitle__link"
+            className='subtitle__link'
             href={`https://aris.iaea.org/PDF/${
-              reactorData[0].nameWebsite.split('\\')[2]
+              reactorData.nameWebsite.split('\\')[2]
             }`}
-            target="_blank"
+            target='_blank'
           >
-            {reactorData[0].fullName}
+            {reactorData.fullName}
           </a>
         </p>
       </div>
@@ -30,7 +27,7 @@ function ReactorDisplay({ reactorData }) {
       <OverviewCards reactorData={reactorData} />
 
       {/* Table Data Extended */}
-      <div className="container container__tables">
+      <div className='container container__tables'>
         <TableOverview reactorData={reactorData} />
         <TableCoolantSys reactorData={reactorData} />
         <TableCore reactorData={reactorData} />

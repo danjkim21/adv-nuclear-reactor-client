@@ -3,59 +3,61 @@ import '../App.css';
 function TableOverview({ reactorData }) {
   return (
     <>
-      <div className="container container__table">
-        <h3 className="container__title">Overview</h3>
-        <table className="table table__reactor">
+      <div className='container container__table'>
+        <h3 className='container__title'>Overview</h3>
+        <table className='table table__reactor'>
           <tbody>
             <tr>
               <td>Vendor</td>
               <td>
-                <a href={reactorData[0].designOrgWebsite}>{reactorData[0].designOrg}</a>
+                <a href={reactorData.designOrgWebsite}>
+                  {reactorData.designOrg}
+                </a>
               </td>
             </tr>
             <tr>
               <td>Country of Origin</td>
-              <td>{reactorData[0].country}</td>
+              <td>{reactorData.country}</td>
             </tr>
             <tr>
               <td>Design Status</td>
-              <td>{reactorData[0].designStatus}</td>
+              <td>{reactorData.designStatus}</td>
             </tr>
             <tr>
               <td>Purpose</td>
-              <td>{reactorData[0].purpose}</td>
+              <td>{reactorData.purpose}</td>
             </tr>
             <tr>
               <td>Non-electrical Applications</td>
-              <td>{reactorData[0].nonElecApplications}</td>
+              <td>{reactorData.nonElecApplications}</td>
             </tr>
             <tr>
               <td>Reactor Type</td>
-              <td>{reactorData[0].type}</td>
+              <td>{reactorData.type}</td>
             </tr>
             <tr>
               <td>Neutron Spectrum</td>
-              <td>{reactorData[0].neutronSpectrum}</td>
+              <td>{reactorData.neutronSpectrum}</td>
             </tr>
             <tr>
               <td>Coolant</td>
-              <td>{reactorData[0].coolant}</td>
+              <td>{reactorData.coolant}</td>
             </tr>
             <tr>
               <td>Moderator</td>
-              <td>{reactorData[0].moderator}</td>
+              <td>{reactorData.moderator}</td>
             </tr>
             <tr>
               <td>Power Plant Net Output</td>
-              <td>{`${reactorData[0].outputNet} MWe`}</td>
+              <td>{`${reactorData.outputNet} MWe`}</td>
             </tr>
             <tr>
               <td>Power Plant Gross Output</td>
-              <td>{`${reactorData[0].outputGross} MWe`}</td>
+              <td>{`${reactorData.outputGross} MWe`}</td>
             </tr>
             <tr>
               <td>Reactor Thermal Output</td>
-              <td>{`${reactorData[0].thermalOutput} MWth`}</td>
+              <td>{`${reactorData.thermalOutput} MWth`}</td>
             </tr>
           </tbody>
         </table>
