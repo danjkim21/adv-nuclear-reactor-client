@@ -4,6 +4,8 @@ import Search from '../components/Search';
 import Desc from '../components/Desc';
 import ReactorDisplay from '../components/ReactorDisplay';
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 function Landing({ data }) {
   let [isActive, setIsActive] = useState(false);
@@ -43,7 +45,7 @@ function Landing({ data }) {
             <div className='container__actionIcon'>
               <a className='link__actionIcon' href='#displayResultArea'>
                 <span className='button__actionIcon'>
-                  <i className='actionIcon fa-solid fa-arrow-down'></i>
+                  <FontAwesomeIcon className='actionIcon' icon={faArrowDown} />
                 </span>
               </a>
             </div>
