@@ -106,7 +106,7 @@ html {
   align-items: center;
   margin-bottom: 0;
 }
-.container__icon > i {
+.container__icon > .app__icon {
   font-size: 1.25rem;
   color: var(--purple__primary);
 }
