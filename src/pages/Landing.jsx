@@ -1,8 +1,8 @@
-import '../App.css';
-import Title from './Title';
-import Search from './Search';
-import Desc from './Desc';
-import ReactorDisplay from './ReactorDisplay';
+import '../assets/App.css';
+import Title from '../components/Title';
+import Search from '../components/Search';
+import Desc from '../components/Desc';
+import ReactorDisplay from '../components/ReactorDisplay';
 import { useState } from 'react';
 
 function Landing({ data }) {

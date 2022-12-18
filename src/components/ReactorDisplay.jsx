@@ -1,4 +1,4 @@
-import '../App.css';
+import '../assets/App.css';
 import OverviewCards from './OverviewCards';
 import TableOverview from './TableOverview';
 import TableCoolantSys from './TableCoolantSys';

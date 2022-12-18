@@ -1,32 +1,23 @@
-import '../App.css';
+import '../assets/App.css';
 import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <header className="section__header">
-      <nav className="nav">
-        <ul className="navList">
-          <li className="navList_items">
-            <Link
-              className="navList_link"
-              to="/"
-            >
+    <header className='section__header'>
+      <nav className='nav'>
+        <ul className='navList'>
+          <li className='navList_items'>
+            <Link className='navList_link' to='/'>
               Home
             </Link>
           </li>
-          <li className="navList_items">
-            <Link
-              className="navList_link"
-              to="/about"
-            >
+          <li className='navList_items'>
+            <Link className='navList_link' to='/about'>
               About
             </Link>
           </li>
-          <li className="navList_items">
-            <Link
-              className="navList_link"
-              to="/dev"
-            >
+          <li className='navList_items'>
+            <Link className='navList_link' to='/dev'>
               Developers
             </Link>
           </li>

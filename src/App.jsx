@@ -1,11 +1,11 @@
-import './App.css';
+import './assets/App.css';
 import Header from './components/Header';
-import Landing from './components/Landing';
-import About from './components/About';
-import Login from './components/Login';
+import Landing from './pages/Landing';
+import About from './pages/About';
+import Login from './pages/Login';
 
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   let [data, setData] = useState([]);
@@ -21,38 +21,35 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="App">
-        <Header />
-
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Landing data={data} />
-              </>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <>
-                <About data={data} />
-              </>
-            }
-          />
-          <Route
-            path="/dev"
-            element={
-              <>
-                <Login />
-              </>
-            }
-          />
-        </Routes>
-      </div>
-    </Router>
+    <div className='App'>
+      <Header />
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <>
+              <Landing data={data} />
+            </>
+          }
+        />
+        <Route
+          path='/about'
+          element={
+            <>
+              <About data={data} />
+            </>
+          }
+        />
+        <Route
+          path='/dev'
+          element={
+            <>
+              <Login />
+            </>
+          }
+        />
+      </Routes>
+    </div>
   );
 }
 
