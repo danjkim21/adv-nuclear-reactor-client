@@ -17,6 +17,11 @@ function Header() {
             </Link>
           </li>
           <li className='navList_items'>
+            <Link className='navList_link' to='/reactors'>
+              Reactors
+            </Link>
+          </li>
+          <li className='navList_items'>
             <Link className='navList_link' to='/about'>
               About
             </Link>
