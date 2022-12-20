@@ -1,4 +1,5 @@
 import '../assets/App.css';
+import Footer from '../components/Footer';
 
 function About() {
   return (
@@ -56,6 +57,8 @@ function About() {
           </pre>
         </div>
       </div>
+
+      <Footer />
     </section>
   );
 }
