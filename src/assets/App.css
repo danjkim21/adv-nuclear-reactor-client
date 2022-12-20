@@ -162,9 +162,15 @@ html {
   padding: 1.5rem 0;
   border-top: 1px solid var(--grey__light);
   background-color: inherit;
+}
+.row__footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.row__small {
+}
+.small {
 }
 .socials__icon {
   margin-left: 0.5rem;
