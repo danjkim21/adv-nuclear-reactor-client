@@ -1,4 +1,5 @@
 import '../assets/App.css';
+import Footer from '../components/Footer';
 
 function Login() {
   return (
@@ -10,6 +11,8 @@ function Login() {
           <b>UNDER CONSTRUCTION</b>
         </p>
       </div>
+
+      <Footer />
     </div>
   );
 }

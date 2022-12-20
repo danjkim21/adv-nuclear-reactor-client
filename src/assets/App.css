@@ -154,6 +154,23 @@ html {
   color: var(--white);
   background-color: var(--purple__primary);
 }
+
+/************* Footer Component Styling *************/
+.section__footer {
+  height: 15vh;
+  width: 100%;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--grey__light);
+  background-color: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.socials__icon {
+  margin-left: 0.5rem;
+  font-size: 1.55rem;
+  color: var(--purple__primary);
+}
 /************* '/' route styling Main Page Styling *************/
 .section__main {
   height: 100vh;
@@ -397,7 +414,7 @@ pre > span {
   .section__main {
     padding: 0 1rem;
   }
-  .mainApp__link {
+  .section__header .mainApp__link {
     display: none;
   }
   .navList {
