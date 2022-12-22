@@ -354,6 +354,28 @@ html {
 .container__reactors {
   margin-top: 3rem;
 }
+.container__flex {
+  display: flex;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--grey__light);
+}
+.col--side {
+  width: 33.3333%;
+}
+.col--main {
+  width: 67.6667%;
+}
+.container__sidebar {
+  background-color: var(--white);
+  padding: 1rem;
+  border: 1px solid var(--grey__light);
+  border-radius: 6px;
+  margin-right: 1rem;
+}
+.container__scrollMain {
+  padding-top: 1rem;
+  padding-left: 1.25rem;
+}
 /************* '/about' route styling About Page Styling *************/
 .section__about,
 .section__login {
