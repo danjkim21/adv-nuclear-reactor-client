@@ -101,6 +101,9 @@ html {
   border: 2px solid var(--purple__primary);
   background-color: var(--purple__primary);
 }
+.page__contentDescrip {
+  font-weight: 500;
+}
 
 /************* Header Component Styling *************/
 .section__header {
@@ -340,6 +343,17 @@ html {
   flex-wrap: wrap;
 }
 
+/************* '/reactors' route styling Reactors Page Styling *************/
+.section__reactors {
+  min-height: 100vh;
+  padding-top: 6.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  background-color: var(--purple__light--extra);
+}
+.container__reactors {
+  margin-top: 3rem;
+}
 /************* '/about' route styling About Page Styling *************/
 .section__about,
 .section__login {
@@ -363,10 +377,6 @@ html {
   padding-bottom: 2.5rem;
   align-items: flex-start;
   border-bottom: 1px solid var(--grey__light);
-}
-.section__about p,
-.section__login p {
-  font-weight: 500;
 }
 .container__body {
   min-width: 100%;
@@ -413,6 +423,10 @@ pre > span {
 
 /* sm */
 @media screen and (max-width: 530px) {
+  /* General */
+  .page__header {
+    font-size: 1.875rem;
+  }
   /* Header & Nav */
   .section__header {
     padding: 0 1.15rem;
@@ -444,7 +458,8 @@ pre > span {
     padding: 5vh 1rem 5vh 1rem;
   }
   .section__about,
-  .section__login {
+  .section__login,
+  .section__reactors {
     padding: 100px 1rem;
   }
   .container__appDesc > .text__appDesc {

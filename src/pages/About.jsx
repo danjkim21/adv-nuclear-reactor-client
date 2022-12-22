@@ -6,7 +6,7 @@ function About() {
     <section className='section__about'>
       <div className='container container__desc'>
         <h1 className='page__header'>Advanced Reactor DataBase API</h1>
-        <p>
+        <p className='page__contentDescrip'>
           The arDB API is written with Node, Express, and Mongoose, with source
           data scraped using Puppeteer and Cheerio. The client site is built in
           React. We try our best to follow documentation and specs to prevent

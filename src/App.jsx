@@ -6,6 +6,7 @@ import Login from './pages/Login';
 
 import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Reactors from './pages/Reactors';
 
 function App() {
   let [data, setData] = useState([]);
@@ -29,6 +30,15 @@ function App() {
           element={
             <>
               <Landing data={data} />
+            </>
+          }
+        />
+
+        <Route
+          path='/reactors'
+          element={
+            <>
+              <Reactors data={data} />
             </>
           }
         />
