@@ -18,11 +18,13 @@ function Reactors({ data }) {
         </p>
       </div>
       <div className='container container__flex'>
+        {/* sidebar containing filtering for reactors */}
         <div className='col col--side'>
           <div className='container__sidebar'>
             <h2 className='sidebar__title'>Categories</h2>
           </div>
         </div>
+        {/* Displays all reactors in cards */}
         <div className='col col--main'>
           <div className='container__scrollMain'>
             <h2>Reactors</h2>
