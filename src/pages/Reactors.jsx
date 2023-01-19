@@ -1,4 +1,5 @@
 import '../assets/App.css';
+import CategoryList from '../components/CategoryList';
 import ReactorCard from '../components/ReactorCard';
 import Footer from '../components/Footer';
 
@@ -22,6 +23,7 @@ function Reactors({ data }) {
         <div className='col col--side'>
           <div className='container__sidebar'>
             <h2 className='sidebar__title'>Categories</h2>
+            <CategoryList data={data} />
           </div>
         </div>
         {/* Displays all reactors in cards */}

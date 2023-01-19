@@ -367,8 +367,9 @@ html {
   width: 67.6667%;
 }
 .container__sidebar {
+  max-width: 300px;
   background-color: var(--white);
-  padding: 1rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   border: 1px solid var(--grey__light);
   border-radius: 6px;
   margin-right: 1rem;
@@ -379,6 +380,25 @@ html {
 .container__scrollMain {
   padding-top: 1rem;
   padding-left: 1.25rem;
+}
+.categoryList {
+  list-style: none;
+  padding-left: 0;
+}
+.categoryList__link {
+  text-decoration: none;
+}
+.categoryList__item {
+  color: var(--purple__grey);
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 1rem;
+  transition: all ease-in-out 75ms;
+}
+.categoryList__item:hover {
+  color: var(--purple__light--extra);
+  background-color: var(--purple__primary);
 }
 
 .container__cards--all {
