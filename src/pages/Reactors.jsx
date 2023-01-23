@@ -7,16 +7,18 @@ function Reactors({ data }) {
   return (
     <section className='section__reactors'>
       <div className='container container__reactors'>
-        <h1 className='page__header'>
-          Open Source Data for Professionals and Developers
-        </h1>
-        <p className='page__contentDescrip'>
-          You are exploring all available scraped datasets from all categories.
-          Available data includes reactor information related to design
-          specifications, reactor core, coolant system, core materials, and
-          more. If you find new data or would like to provide updates, feel free
-          to login and submit a request.
-        </p>
+        <div className='container container__header'>
+          <h1 className='page__header'>
+            Open Source Data for Professionals and Developers
+          </h1>
+          <p className='page__contentDescrip'>
+            You are exploring all available scraped datasets from all
+            categories. Available data includes reactor information related to
+            design specifications, reactor core, coolant system, core materials,
+            and more. If you find new data or would like to provide updates,
+            feel free to login and submit a request.
+          </p>
+        </div>
       </div>
       <div className='container container__flex'>
         {/* sidebar containing filtering for reactors */}

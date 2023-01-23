@@ -343,7 +343,7 @@ html {
   flex-wrap: wrap;
 }
 /* Modal styling */
-.modal-window {
+.modal__window {
   position: fixed;
   background-color: rgba(255, 255, 255, 0.25);
   top: 0;
@@ -353,26 +353,30 @@ html {
   z-index: 999;
   visibility: hidden;
   opacity: 0;
+  backdrop-filter: blur(5px);
   pointer-events: none;
-  transition: all 0.3s;
+  transition: all 0.15s;
 }
-.modal-window:target {
+.modal__window:target {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
 }
-.modal-window > div {
-  max-width: 95vw;
-  min-height: 250px;
-  max-height: 95vh;
+.modal__window > .modal__inner {
+  width: 90vw;
+  max-width: 1500px;
+  max-height: 90vh;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   padding: 2em;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--grey__light);
+  border-radius: 4px;
   background: white;
+  overflow-y: auto;
 }
-.modal-close {
+.modal__close {
   color: #aaa;
   line-height: 50px;
   font-size: 80%;
@@ -383,7 +387,7 @@ html {
   width: 70px;
   text-decoration: none;
 }
-.modal-close:hover {
+.modal__close:hover {
   color: black;
 }
 /************* '/reactors' route styling Reactors Page Styling *************/
@@ -395,10 +399,14 @@ html {
   background-color: var(--purple__light--extra);
 }
 .container__reactors {
+  max-width: 1400px;
   margin-top: 3rem;
+}
+.container__header {
   max-width: 800px;
 }
 .container__flex {
+  max-width: 1400px;
   display: flex;
   padding-top: 2.5rem;
   border-top: 1px solid var(--grey__light);
@@ -458,11 +466,13 @@ html {
   min-height: 255px;
   transition: all ease-in-out 75ms;
 }
-.card__reactorData--all .card__title {
+.card__reactorData--all .card__title,
+.modal-window .card__title {
   margin-bottom: 0;
   color: var(--purple__grey);
 }
-.card__reactorData--all .card__subtitle {
+.card__reactorData--all .card__subtitle,
+.modal-window .card__subtitle {
   margin-top: 0;
   font-weight: 500;
   color: var(--purple__accent--primary);
@@ -493,6 +503,21 @@ html {
 }
 .card__icon {
   color: var(--purple__secondary);
+}
+.tableModal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--grey__light);
+}
+.tableModal__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  width: 25%;
+}
+.tableModal__data {
 }
 
 /************* '/about' route styling About Page Styling *************/
