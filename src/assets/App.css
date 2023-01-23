@@ -101,6 +101,9 @@ html {
   border: 2px solid var(--purple__primary);
   background-color: var(--purple__primary);
 }
+.page__contentDescrip {
+  font-weight: 500;
+}
 
 /************* Header Component Styling *************/
 .section__header {
@@ -339,6 +342,183 @@ html {
   gap: 0 4rem;
   flex-wrap: wrap;
 }
+/* Modal styling */
+.modal__window {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  backdrop-filter: blur(5px);
+  pointer-events: none;
+  transition: all 0.15s;
+}
+.modal__window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal__window > .modal__inner {
+  width: 90vw;
+  max-width: 1500px;
+  max-height: 90vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 2em;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--grey__light);
+  border-radius: 4px;
+  background: white;
+  overflow-y: auto;
+}
+.modal__close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal__close:hover {
+  color: black;
+}
+/************* '/reactors' route styling Reactors Page Styling *************/
+.section__reactors {
+  min-height: 100vh;
+  padding-top: 6.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  background-color: var(--purple__light--extra);
+}
+.container__reactors {
+  max-width: 1400px;
+  margin-top: 3rem;
+}
+.container__header {
+  max-width: 800px;
+}
+.container__flex {
+  max-width: 1400px;
+  display: flex;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--grey__light);
+}
+.col--side {
+  width: 33.3333%;
+}
+.col--main {
+  width: 67.6667%;
+}
+.container__sidebar {
+  max-width: 300px;
+  background-color: var(--white);
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  border: 1px solid var(--grey__light);
+  border-radius: 6px;
+  margin-right: 1rem;
+}
+.sidebar__title {
+  color: var(--purple__grey);
+}
+.container__scrollMain {
+  padding-top: 1rem;
+  padding-left: 1.25rem;
+}
+.categoryList {
+  list-style: none;
+  padding-left: 0;
+}
+.categoryList__link {
+  text-decoration: none;
+}
+.categoryList__item {
+  color: var(--purple__grey);
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 1rem;
+  transition: all ease-in-out 75ms;
+}
+.categoryList__item:hover {
+  color: var(--purple__light--extra);
+  background-color: var(--purple__primary);
+}
+
+.container__cards--all {
+  justify-content: space-between;
+  gap: 2rem;
+}
+.card__reactorData--all {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border: 1px solid var(--grey__light);
+  width: 47.5%;
+  max-width: 425px;
+  min-height: 255px;
+  transition: all ease-in-out 75ms;
+}
+.card__reactorData--all .card__title,
+.modal-window .card__title {
+  margin-bottom: 0;
+  color: var(--purple__grey);
+}
+.card__reactorData--all .card__subtitle,
+.modal-window .card__subtitle {
+  margin-top: 0;
+  font-weight: 500;
+  color: var(--purple__accent--primary);
+}
+.card__reactorData--all:hover {
+  background-color: rgb(243 243 254);
+  border: 1px solid rgb(101 108 246);
+  border-radius: 4px;
+}
+.link__modal {
+  text-decoration: none;
+}
+.link__modal--button {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  color: var(--purple__grey);
+}
+.link__modal--button:hover {
+  color: var(--purple__accent--primary);
+}
+.card__reactorData--all .card__title:hover {
+  color: var(--purple__accent--primary);
+}
+.card__reactorProp {
+  display: block;
+  color: var(--purple__grey);
+}
+.card__icon {
+  color: var(--purple__secondary);
+}
+.tableModal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--grey__light);
+}
+.tableModal__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  width: 25%;
+}
+.tableModal__data {
+}
 
 /************* '/about' route styling About Page Styling *************/
 .section__about,
@@ -363,10 +543,6 @@ html {
   padding-bottom: 2.5rem;
   align-items: flex-start;
   border-bottom: 1px solid var(--grey__light);
-}
-.section__about p,
-.section__login p {
-  font-weight: 500;
 }
 .container__body {
   min-width: 100%;
@@ -410,9 +586,20 @@ pre > span {
   /* border: 1px solid var(--grey__light); */
 }
 /************* Media Queries & Mobile Responsiveness *************/
+/* md */
+@media screen and (max-width: 950px) {
+  /* View all reactors Page */
+  .card__reactorData--all {
+    width: 85.5%;
+  }
+}
 
 /* sm */
 @media screen and (max-width: 530px) {
+  /* General */
+  .page__header {
+    font-size: 1.875rem;
+  }
   /* Header & Nav */
   .section__header {
     padding: 0 1.15rem;
@@ -444,7 +631,8 @@ pre > span {
     padding: 5vh 1rem 5vh 1rem;
   }
   .section__about,
-  .section__login {
+  .section__login,
+  .section__reactors {
     padding: 100px 1rem;
   }
   .container__appDesc > .text__appDesc {
@@ -479,6 +667,30 @@ pre > span {
   }
   .reactorData__detail {
     font-size: 1.15rem;
+  }
+  /* View all reactors Page */
+  .container__flex {
+    display: block;
+  }
+  .col--side {
+    width: 100%;
+  }
+  .col--main {
+    width: 100%;
+  }
+  .container__scrollMain {
+    padding-left: 0;
+  }
+  .container__sidebar {
+    max-width: 100%;
+    margin-right: 0;
+  }
+  .card__reactorData--all {
+    width: 100%;
+    max-width: 100%;
+  }
+  .tableModal__title {
+    width: 100%;
   }
   /* About page */
   .container__body {
