@@ -10,16 +10,25 @@ import Reactors from './pages/Reactors';
 
 function App() {
   let [data, setData] = useState([]);
+  let [isLoading, setIsLoading] = useState(false);
 
   // Fetch all reactor data from api
   useEffect(() => {
-    const fetchData = async () => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      setIsLoading(true);
       const response = await fetch(`https://ardb.cyclic.app/api`);
       const json = await response.json();
       setData(json);
-    };
-    fetchData().catch(console.error);
-  }, []);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className='App'>
@@ -29,7 +38,7 @@ function App() {
           path='/'
           element={
             <>
-              <Landing data={data} />
+              <Landing data={data} isLoading={isLoading} />
             </>
           }
         />
