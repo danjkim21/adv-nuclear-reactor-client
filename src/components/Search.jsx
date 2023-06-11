@@ -1,9 +1,11 @@
 import '../assets/App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-function Search({ data, searchReactor }) {
+function Search({ data, searchReactor, isLoading }) {
   const reactorSelections = data.map((reactor) => {
     return (
-      <option key={Math.random()} value={reactor.name}>
+      <option key={reactor._id} value={reactor.name}>
         {reactor.name}
       </option>
     );
@@ -11,17 +13,29 @@ function Search({ data, searchReactor }) {
 
   return (
     <div className='container container__appSearch'>
-      <form onSubmit={searchReactor}>
+      <form className='form__appSearch' onSubmit={searchReactor}>
         <input
           className='searchBtn'
           type='text'
           list='reactors'
           name='searchReactor'
           id='searchReactor'
-          placeholder='Input reactor name'
+          placeholder={
+            isLoading ? 'Fetching reactor data' : 'Input reactor name'
+          }
         />
+
+        {/* Test Spinner on isLoading */}
+        {isLoading && (
+          <FontAwesomeIcon
+            className='searchSpinner'
+            icon={faSpinner}
+            spinPulse
+          />
+        )}
+
         <datalist id='reactors'>{reactorSelections}</datalist>
-        <input className='submitBtn' type='submit' value='Search Database' />
+        <input className='submitBtn' type='submit' value={`Search Database`} />
       </form>
     </div>
   );

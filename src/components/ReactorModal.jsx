@@ -19,7 +19,11 @@ function ReactorModal({ reactor }) {
         <p className='card__subtitle'>{reactor.fullName}</p>
 
         <table className='table tableModal'>
-          <thead className='tableModal__title'>Overview</thead>
+          <thead className='tableModal__title'>
+            <tr>
+              <th>Overview</th>
+            </tr>
+          </thead>
           <tbody className='tableModal__data'>
             <tr className='tableModal__row'>
               <td>Vendor</td>
@@ -75,7 +79,11 @@ function ReactorModal({ reactor }) {
         </table>
 
         <table className='table tableModal'>
-          <thead className='tableModal__title'>Coolant System</thead>
+          <thead className='tableModal__title'>
+            <tr>
+              <th>Coolant System</th>
+            </tr>
+          </thead>
           <tbody className='tableModal__data'>
             <tr className='tableModal__row'>
               <td>Coolant</td>
@@ -105,7 +113,11 @@ function ReactorModal({ reactor }) {
         </table>
 
         <table className='table tableModal'>
-          <thead className='tableModal__title'>Reactor Core</thead>
+          <thead className='tableModal__title'>
+            <tr>
+              <th>Reactor Core</th>
+            </tr>
+          </thead>
           <tbody className='tableModal__data'>
             <tr className='tableModal__row'>
               <td>Active Core Height</td>
@@ -147,7 +159,11 @@ function ReactorModal({ reactor }) {
         </table>
 
         <table className='table tableModal'>
-          <thead className='tableModal__title'>Core Materials</thead>
+          <thead className='tableModal__title'>
+            <tr>
+              <th>Core Materials</th>
+            </tr>
+          </thead>
           <tbody className='tableModal__data'>
             <tr className='tableModal__row'>
               <td>Fuel Material</td>
@@ -185,7 +201,11 @@ function ReactorModal({ reactor }) {
         </table>
 
         <table className='table tableModal'>
-          <thead className='tableModal__title'>Pressure Vessel</thead>
+          <thead className='tableModal__title'>
+            <tr>
+              <th>Pressure Vessel</th>
+            </tr>
+          </thead>
           <tbody className='tableModal__data'>
             <tr className='tableModal__row'>
               <td>Inner Diameter of Cylindrical Shell</td>

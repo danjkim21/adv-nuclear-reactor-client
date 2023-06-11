@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
-function Landing({ data }) {
+function Landing({ data, isLoading }) {
   let [isActive, setIsActive] = useState(false);
   let [reactorData, setReactorData] = useState([]);
 
@@ -38,7 +38,11 @@ function Landing({ data }) {
         <Title appTitle='arDB' />
         <Desc appDesc='Explore, Research, Support - Advanced reactor resources and data aggregated for policy professionals, reactor developers, tech enthusiasts. An open source project dedicated to cataloging advanced nuclear reactor technologies. ' />
         {/* Form component - searchs reactor API for reactor */}
-        <Search data={data} searchReactor={searchReactor} />
+        <Search
+          data={data}
+          searchReactor={searchReactor}
+          isLoading={isLoading}
+        />
 
         <div className='container container__appDivider'>
           <span className='appDivider__text'>or</span>
