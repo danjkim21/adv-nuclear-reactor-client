@@ -47,7 +47,7 @@ function App() {
           path='/reactors'
           element={
             <>
-              <Reactors data={data} />
+              <Reactors data={data} isLoading={isLoading} />
             </>
           }
         />

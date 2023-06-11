@@ -2,8 +2,10 @@ import '../assets/App.css';
 import CategoryList from '../components/CategoryList';
 import ReactorCard from '../components/ReactorCard';
 import Footer from '../components/Footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-function Reactors({ data }) {
+function Reactors({ data, isLoading }) {
   return (
     <section className='section__reactors'>
       <div className='container container__reactors'>
@@ -25,14 +27,16 @@ function Reactors({ data }) {
         <div className='col col--side'>
           <div className='container__sidebar'>
             <h2 className='sidebar__title'>Categories</h2>
-            <CategoryList data={data} />
+            {isLoading && <FontAwesomeIcon icon={faSpinner} spinPulse />}
+            {!isLoading && <CategoryList data={data} isLoading={isLoading} />}
           </div>
         </div>
         {/* Displays all reactors in cards */}
         <div className='col col--main'>
           <div className='container__scrollMain'>
             <h2>Reactors</h2>
-            <ReactorCard data={data} />
+            {isLoading && <FontAwesomeIcon icon={faSpinner} spinPulse />}
+            {!isLoading && <ReactorCard data={data} isLoading={isLoading} />}
           </div>
         </div>
       </div>

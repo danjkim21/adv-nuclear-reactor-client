@@ -1,7 +1,7 @@
 import '../assets/App.css';
 
 function CategoryList({ data }) {
-  let categories = [...new Set([...data].map((reactor) => reactor.type))];
+  const categories = [...new Set([...data].map((reactor) => reactor.type))];
 
   let category = categories.map((type) => {
     return (
