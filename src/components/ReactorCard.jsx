@@ -1,4 +1,4 @@
-import '../assets/App.css';
+import React from 'react';
 import ReactorModal from '../components/ReactorModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,12 +12,9 @@ import {
 function ReactorCard({ data }) {
   let card = data.map((reactor) => {
     return (
-      <>
+      <React.Fragment key={reactor._id}>
         {/* Reactor Card Main */}
-        <div
-          className='card--light card__reactorData card__reactorData--all'
-          key={reactor.name}
-        >
+        <div className='card--light card__reactorData card__reactorData--all'>
           <a className='link__modal' href={`#${reactor.name}`}>
             <h3 className='card__title'>{reactor.name}</h3>
           </a>
@@ -53,7 +50,7 @@ function ReactorCard({ data }) {
 
         {/* Reactor Modal Pop out */}
         <ReactorModal reactor={reactor} />
-      </>
+      </React.Fragment>
     );
   });
 
