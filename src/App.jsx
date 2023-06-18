@@ -4,31 +4,12 @@ import Landing from './pages/Landing';
 import About from './pages/About';
 import Login from './pages/Login';
 
-import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Reactors from './pages/Reactors';
+import useGetAllReactors from './hooks/useGetAllReactors';
 
 function App() {
-  let [data, setData] = useState([]);
-  let [isLoading, setIsLoading] = useState(false);
-
-  // Fetch all reactor data from api
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      setIsLoading(true);
-      const response = await fetch(`https://ardb.cyclic.app/api`);
-      const json = await response.json();
-      setData(json);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
-      setIsLoading(false);
-    }
-  };
+  const { data, isLoading } = useGetAllReactors();
 
   return (
     <div className='App'>

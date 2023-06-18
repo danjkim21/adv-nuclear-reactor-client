@@ -1,23 +1,22 @@
-import '../assets/App.css';
+function CategoryList({ categories, setTypeInput }) {
+  const categoriesSortedAlpha = categories.sort();
 
-function CategoryList({ data }) {
-  const categories = [...new Set([...data].map((reactor) => reactor.type))];
+  const filterDataByType = (e) => {
+    const selectedType = e.target.innerText;
+    setTypeInput(selectedType);
+  };
 
-  let category = categories.map((type) => {
+  let category = categoriesSortedAlpha.map((type) => {
     return (
-      <li className='categoryList__item' key={type}>
+      // <a className='categoryList__link' key={type} href='#'>
+      <li className='categoryList__item' key={type} onClick={filterDataByType}>
         {type}
       </li>
+      // </a>
     );
   });
 
-  return (
-    <ul className='categoryList'>
-      <a className='categoryList__link' href='#'>
-        {category}
-      </a>
-    </ul>
-  );
+  return <ul className='categoryList'>{category}</ul>;
 }
 
 export default CategoryList;
