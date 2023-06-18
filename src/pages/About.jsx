@@ -55,6 +55,12 @@ function About() {
           <pre>
             https://ardb.cyclic.app/api/<span>reactor name</span>
           </pre>
+          <h3>Return List of all Reactor Types</h3>
+          <pre>https://ardb.cyclic.app/api/categories</pre>
+          <h3>Search API by Reactor Types</h3>
+          <pre>
+            https://ardb.cyclic.app/api/categories/<span>reactor type</span>
+          </pre>
         </div>
       </div>
 
