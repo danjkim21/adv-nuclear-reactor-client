@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import CategoryList from '../../components/category-list';
 import ReactorCard from '../../components/reactor-card';
-import Footer from '../../components/Footer';
+import Footer from '../../components/footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import useGetReactorTypes from '../../hooks/useGetReactorTypes';
