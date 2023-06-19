@@ -64,7 +64,7 @@ const reactorTypeDefinitions = {
   },
 };
 
-function Reactors({ data, isLoading }) {
+function Reactors() {
   const [typeInput, setTypeInput] = useState('ALL');
   const reactorTypeInfo = reactorTypeDefinitions[typeInput];
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function useGetAllReactors() {
+export default function useGetAllReactorTypes() {
   let [data, setData] = useState([]);
   let [isLoading, setIsLoading] = useState(false);
   let [isError, setIsError] = useState(false);
