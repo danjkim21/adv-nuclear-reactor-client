@@ -1,11 +1,11 @@
-import './assets/App.css';
+import './styles/App.css';
 import Header from './components/Header';
-import Landing from './pages/Landing';
-import About from './pages/About';
-import Login from './pages/Login';
+import Landing from './pages/landing';
+import About from './pages/about';
+import Login from './pages/login';
 
 import { Route, Routes } from 'react-router-dom';
-import Reactors from './pages/Reactors';
+import Reactors from './pages/reactors';
 import useGetAllReactors from './hooks/useGetAllReactors';
 
 function App() {

@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import CategoryList from '../components/CategoryList';
-import ReactorCard from '../components/ReactorCard';
-import Footer from '../components/Footer';
+import CategoryList from '../../components/category-list';
+import ReactorCard from '../../components/reactor-card';
+import Footer from '../../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-import useGetReactorTypes from '../hooks/useGetReactorTypes';
-import useGetReactorsByType from '../hooks/useGetReactorsByType';
+import useGetReactorTypes from '../../hooks/useGetReactorTypes';
+import useGetReactorsByType from '../../hooks/useGetReactorsByType';
 
 const reactorTypeDefinitions = {
   ALL: { title: 'All Reactors', desc: '' },

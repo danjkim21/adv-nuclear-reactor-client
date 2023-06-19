@@ -1,5 +1,3 @@
-import '../assets/App.css';
-
 function TableCoolantSys({ reactorData }) {
   return (
     <>

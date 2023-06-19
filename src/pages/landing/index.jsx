@@ -1,8 +1,7 @@
-import '../assets/App.css';
-import Title from '../components/Title';
-import Search from '../components/Search';
-import Desc from '../components/Desc';
-import ReactorDisplay from '../components/ReactorDisplay';
+import Title from './Title';
+import Search from './Search';
+import Desc from './Desc';
+import ReactorDisplay from '../../components/reactor-display';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -1,5 +1,3 @@
-import '../assets/App.css';
-
 function Desc({ appDesc }) {
   return (
     <div className='container container__appDesc'>

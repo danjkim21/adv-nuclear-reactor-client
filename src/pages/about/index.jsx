@@ -1,5 +1,4 @@
-import '../assets/App.css';
-import Footer from '../components/Footer';
+import Footer from '../../components/Footer';
 
 function About() {
   return (
