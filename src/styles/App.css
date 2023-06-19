@@ -171,10 +171,10 @@ html {
   justify-content: space-between;
   align-items: center;
 }
-.row__small {
+/* .row__small {
 }
 .small {
-}
+} */
 .socials__icon {
   margin-left: 0.5rem;
   font-size: 1.55rem;
