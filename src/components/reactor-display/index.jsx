@@ -1,4 +1,3 @@
-import '../assets/App.css';
 import OverviewCards from './OverviewCards';
 import TableOverview from './TableOverview';
 import TableCoolantSys from './TableCoolantSys';
@@ -23,7 +22,7 @@ function ReactorDisplay({ reactorData }) {
           </a>
         </p>
       </div>
-      {/* Topline Data */}
+      {/* Top Line Data */}
       <OverviewCards reactorData={reactorData} />
 
       {/* Table Data Extended */}

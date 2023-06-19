@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactorModal from '../components/ReactorModal';
+import ReactorModal from '../reactor-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFireFlameSimple,
