@@ -26,7 +26,7 @@
 ## About The Project
 
 <p align="center">
-  <img src="images/arDB-demo.gif" width="75%" alt="arDB demo gif"/>
+  <img src="src/assets/arDB-demo.gif" width="75%" alt="arDB demo gif"/>
 </p>
 
 As an energy wonk, I've notice how difficult it is find up to date information on advanced nuclear reactor designs. This project aims to aggregate information on all advanced nuclear reactor technologies that exist around the world. <br>
