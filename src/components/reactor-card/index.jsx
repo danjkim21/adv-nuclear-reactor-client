@@ -8,6 +8,7 @@ import {
   faLightbulb,
   faExternalLinkAlt,
 } from '@fortawesome/free-solid-svg-icons';
+import './reactorCard.scss';
 
 function ReactorCard({ data }) {
   let card = data.map((reactor) => {

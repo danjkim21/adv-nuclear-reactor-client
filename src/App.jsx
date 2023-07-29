@@ -1,4 +1,5 @@
-import './styles/App.scss';
+import './styles/app.scss';
+import './styles/mediaQueries.scss';
 import AppRoutes from './router';
 import { Analytics } from '@vercel/analytics/react';
 

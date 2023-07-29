@@ -1,0 +1,115 @@
+/************* Media Queries & Mobile Responsiveness *************/
+/* md */
+@media screen and (max-width: 950px) {
+  /* View all reactors Page */
+  .card__reactorData--all {
+    width: 85.5%;
+  }
+}
+
+/* sm */
+@media screen and (max-width: 530px) {
+  /* General */
+  .page__header {
+    font-size: 1.875rem;
+  }
+  /* Header & Nav */
+  .section__header {
+    padding: 0 1.15rem;
+  }
+  .section__main {
+    padding: 0 1rem;
+  }
+  .section__header .mainApp__link {
+    display: none;
+  }
+  .navList {
+    gap: 1rem;
+  }
+  .header__appTitle {
+    font-size: 3.65rem;
+    line-height: 5rem;
+    letter-spacing: -0.295rem;
+  }
+  /* Landing Page search form */
+  .searchBtn {
+    width: 100%;
+    border-radius: 4px;
+  }
+  .searchSpinner {
+    right: 5vw;
+  }
+  .submitBtn {
+    width: 100%;
+    border-radius: 4px;
+  }
+  .section__displayArea {
+    padding: 5vh 1rem 5vh 1rem;
+  }
+  .section__about,
+  .section__login,
+  .section__reactors {
+    padding: 100px 1rem;
+  }
+  .container__appDesc > .text__appDesc {
+    max-width: 100%;
+    font-size: 16px;
+  }
+  .btn_secondary {
+    width: 100%;
+  }
+  .button__actionIcon {
+    bottom: 3.5vh;
+    left: 46.5vw;
+  }
+  /* Reactor display Cards */
+  .title__reactorName {
+    font-size: 2.15rem;
+    line-height: 2.15rem;
+  }
+  .container__cards {
+    gap: 0.55rem;
+  }
+  .card__reactorData {
+    height: 165px;
+    width: 170px;
+    padding: 1rem;
+  }
+  .card__title {
+    font-size: 1rem;
+  }
+  .reactorData__icon {
+    font-size: 1.15rem;
+  }
+  .reactorData__detail {
+    font-size: 1.15rem;
+  }
+  /* View all reactors Page */
+  .container__flex {
+    display: block;
+  }
+  .col--side {
+    width: 100%;
+  }
+  .col--main {
+    width: 100%;
+  }
+  .container__scrollMain {
+    padding-left: 0;
+  }
+  .container__sidebar {
+    max-width: 100%;
+    margin-right: 0;
+  }
+  .card__reactorData--all {
+    width: 100%;
+    max-width: 100%;
+  }
+  .tableModal__title {
+    width: 100%;
+  }
+  /* About page */
+  .container__body {
+    width: 100%;
+  }
+}

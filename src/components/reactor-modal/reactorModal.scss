@@ -1,0 +1,27 @@
+@use '../../styles/app.scss';
+
+.link__modal {
+  text-decoration: none;
+}
+.link__modal--button {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  color: app.$purple__grey;
+}
+.link__modal--button:hover {
+  color: app.$purple__accent--primary;
+}
+.tableModal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid app.$grey__light;
+}
+.tableModal__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  width: 25%;
+}

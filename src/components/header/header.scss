@@ -1,0 +1,54 @@
+@use '../../styles/app.scss';
+
+/************* Header Component Styling *************/
+.section__header {
+  height: 10vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: app.$purple__light--extra;
+  border-bottom: 1px solid app.$grey__light;
+}
+.navList {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.navList_items {
+  display: inline-block;
+}
+.mainApp__link {
+  margin-right: auto;
+  font-size: 1.55rem;
+  letter-spacing: -0.085rem;
+  color: app.$black;
+  font-weight: 700;
+  text-decoration: none;
+}
+.navList_items > .navList_link {
+  color: rgb(107, 104, 119);
+  font-weight: 700;
+  text-decoration: none;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all ease-in-out 100ms;
+}
+.navList_items > .navList_link:hover {
+  border: 1px solid app.$purple__primary;
+  color: app.$purple__primary;
+}
+.navList_items > .btn_primary,
+.navList_items > .btn_primary:hover {
+  padding: 0.6rem 1.35rem;
+  border: none;
+  color: app.$white;
+  background-color: app.$purple__primary;
+}

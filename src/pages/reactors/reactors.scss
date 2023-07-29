@@ -1,0 +1,44 @@
+@use '../../styles/app.scss';
+
+/************* '/reactors' route styling Reactors Page Styling *************/
+.section__reactors {
+  min-height: 100vh;
+  padding-top: 6.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  background-color: app.$purple__light--extra;
+}
+.container__reactors {
+  max-width: 1400px;
+  margin-top: 3rem;
+}
+.container__header {
+  max-width: 800px;
+}
+.container__flex {
+  max-width: 1400px;
+  display: flex;
+  padding-top: 2.5rem;
+  border-top: 1px solid app.$grey__light;
+}
+.col--side {
+  width: 33.3333%;
+}
+.col--main {
+  width: 67.6667%;
+}
+
+.container__cards--all {
+  justify-content: space-between;
+  gap: 2rem;
+}
+.card__reactorData--all {
+  display: flex;
+  flex-direction: column;
+  background-color: app.$white;
+  border: 1px solid app.$grey__light;
+  width: 47.5%;
+  max-width: 425px;
+  min-height: 255px;
+  transition: all ease-in-out 75ms;
+}

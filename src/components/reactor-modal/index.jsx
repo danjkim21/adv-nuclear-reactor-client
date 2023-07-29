@@ -6,6 +6,7 @@ import {
   faLightbulb,
   faExternalLinkAlt,
 } from '@fortawesome/free-solid-svg-icons';
+import './reactorModal.scss';
 
 function ReactorModal({ reactor }) {
   return (

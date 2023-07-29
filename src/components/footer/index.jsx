@@ -10,6 +10,7 @@ import {
   faExternalLinkSquare,
   faLink,
 } from '@fortawesome/free-solid-svg-icons';
+import './footer.scss';
 
 function Footer() {
   return (

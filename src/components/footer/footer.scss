@@ -1,0 +1,20 @@
+@use '../../styles/app.scss';
+
+/************* Footer Component Styling *************/
+.section__footer {
+  height: 15vh;
+  width: 100%;
+  padding: 1.5rem 0;
+  border-top: 1px solid app.$grey__light;
+  background-color: inherit;
+}
+.row__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.socials__icon {
+  margin-left: 0.5rem;
+  font-size: 1.55rem;
+  color: app.$purple__primary;
+}

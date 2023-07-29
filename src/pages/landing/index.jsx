@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import useGetAllReactors from '../../hooks/useGetAllReactors';
+import './landing.scss';
 
 function Landing() {
   let [isActive, setIsActive] = useState(false);

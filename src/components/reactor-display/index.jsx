@@ -4,6 +4,7 @@ import TableCoolantSys from './TableCoolantSys';
 import TableCore from './TableCore';
 import TableMaterials from './TableMaterials';
 import TablePressureVessel from './TablePressureVessel';
+import './ReactorDisplay.scss';
 
 function ReactorDisplay({ reactorData }) {
   return (

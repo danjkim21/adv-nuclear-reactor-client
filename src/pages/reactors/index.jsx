@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import useGetReactorTypes from '../../hooks/useGetReactorTypes';
 import useGetReactorsByType from '../../hooks/useGetReactorsByType';
+import './reactors.scss';
 
 const reactorTypeDefinitions = {
   ALL: { title: 'All Reactors', desc: '' },

@@ -1,0 +1,74 @@
+@use '../../styles/app.scss';
+
+/* Reactor Input Display area */
+.section__displayArea {
+  color: app.$grey__medium;
+}
+.section__displayArea {
+  height: auto;
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
+  background-color: app.$purple__light--extra;
+  border-top: 1px solid app.$grey__light;
+}
+.title__reactorName {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  margin-bottom: 0;
+}
+.subtitle__reactorFullName {
+  margin-top: 0.35rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.subtitle__link {
+  color: app.$purple__accent--primary;
+  text-decoration: none;
+}
+.subtitle__link:hover {
+  text-decoration: underline;
+}
+
+.container__cards {
+  max-width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.card__reactorData {
+  height: 185px;
+  width: 245px;
+  padding: 1rem;
+  overflow-y: auto;
+}
+.card__title {
+  color: app.$purple__accent2--secondary;
+  color: rgba(101, 108, 246, 0.839);
+  margin-top: 0;
+}
+.subcontainer__cardDetail {
+  display: flex;
+}
+.reactorData__icon {
+  color: app.$purple__accent--primary;
+  color: app.$purple__secondary;
+  font-size: 1.55rem;
+  margin-right: 1rem;
+}
+.reactorData__detail {
+  color: app.$purple__accent--primary;
+  color: app.$purple__secondary;
+  font-size: 1.55rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+.container__tables {
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0 4rem;
+  flex-wrap: wrap;
+}

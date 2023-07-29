@@ -1,3 +1,4 @@
+import './categoryList.scss';
 function CategoryList({ categories, setTypeInput }) {
   const categoriesSortedAlpha = categories.sort();
 

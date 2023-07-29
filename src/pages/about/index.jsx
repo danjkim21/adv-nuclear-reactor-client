@@ -1,4 +1,5 @@
 import Footer from '../../components/footer';
+import './about.scss';
 
 function About() {
   return (

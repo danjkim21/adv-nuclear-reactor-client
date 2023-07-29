@@ -1,0 +1,101 @@
+@use '../../styles/app.scss';
+
+/************* '/' route styling Main Page Styling *************/
+.section__main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-size: contain; */
+  background-color: app.$purple__light;
+  background-color: #dcdbe5c7;
+  background-image: url(../../assets/bg-shapes.svg);
+}
+
+.header__appTitle {
+  font-size: 4.55rem;
+  line-height: 5rem;
+  letter-spacing: -0.325rem;
+  margin: 0;
+}
+.container__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+.app__icon {
+  font-size: 1.25rem;
+  color: app.$purple__primary;
+}
+.form__appSearch {
+  position: relative;
+  width: fit-content;
+}
+.searchBtn {
+  height: 50px;
+  width: 375px;
+  padding-left: 1rem;
+  border: none;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+}
+.searchSpinner {
+  position: absolute;
+  top: 1rem;
+  right: 170px;
+}
+.submitBtn {
+  height: 50px;
+  width: 155px;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  border: none;
+  color: app.$white;
+  background-color: app.$purple__primary;
+  font-weight: 700;
+}
+.submitBtn:hover {
+  cursor: pointer;
+}
+.container__appDesc {
+  text-align: center;
+}
+.container__appDesc > .text__appDesc {
+  max-width: 750px;
+  color: app.$purple__grey;
+  font-weight: 500;
+  font-size: 16.5px;
+  margin: 0;
+}
+.link__actionIcon {
+  color: app.$black;
+}
+.button__actionIcon {
+  font-size: 1.75rem;
+  position: absolute;
+  bottom: 5vh;
+  left: 48vw;
+}
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+.button__actionIcon {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+}
+.button__actionIcon:nth-child(1) {
+  animation: fade-in 0.5s 0.05s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
