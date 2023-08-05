@@ -1,4 +1,8 @@
-function TableCore({ reactorData }) {
+interface TableCoreProps {
+  reactorData: ReactorInterface;
+}
+
+function TableCore({ reactorData }: TableCoreProps) {
   return (
     <>
       <div className='container container__table'>

@@ -1,4 +1,8 @@
-function TableCoolantSys({ reactorData }) {
+interface TableCoolantSysProps {
+  reactorData: ReactorInterface;
+}
+
+function TableCoolantSys({ reactorData }: TableCoolantSysProps) {
   return (
     <>
       <div className='container container__table'>

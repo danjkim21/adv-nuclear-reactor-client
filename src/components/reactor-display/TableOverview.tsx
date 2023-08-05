@@ -1,4 +1,8 @@
-function TableOverview({ reactorData }) {
+interface TableOverviewProps {
+  reactorData: ReactorInterface;
+}
+
+function TableOverview({ reactorData }: TableOverviewProps) {
   return (
     <>
       <div className='container container__table'>

@@ -1,4 +1,5 @@
 interface ReactorInterface {
+  _id: string;
   name: string;
   fullName: string;
   nameWebsite: string;

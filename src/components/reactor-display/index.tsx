@@ -5,7 +5,11 @@ import TableCore from './TableCore';
 import TableMaterials from './TableMaterials';
 import TablePressureVessel from './TablePressureVessel';
 
-function ReactorDisplay({ reactorData }) {
+interface ReactorDisplayProps {
+  reactorData: ReactorInterface;
+}
+
+function ReactorDisplay({ reactorData }: ReactorDisplayProps) {
   return (
     <section id='displayResultArea' className='section__displayArea'>
       <div className='container container__reactorTitle'>
