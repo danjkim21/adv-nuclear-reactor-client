@@ -1,4 +1,6 @@
-export const reactorTypeDefinitions = {
+import { ReactorTypeDefinitionsInterface } from '../types/definitions';
+
+export const reactorTypeDefinitions: ReactorTypeDefinitionsInterface = {
   ALL: { title: 'All Reactors', desc: '' },
   BWR: {
     title: 'Boiling Water Reactors',
