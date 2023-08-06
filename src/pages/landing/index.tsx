@@ -10,28 +10,93 @@ import useGetAllReactors from '../../hooks/useGetAllReactors';
 
 function Landing() {
   let [isActive, setIsActive] = useState(false);
-  let [reactorData, setReactorData] = useState([]);
+  let [reactorData, setReactorData] = useState<ReactorInterface>({
+    _id: '',
+    name: '',
+    fullName: '',
+    nameWebsite: '',
+    designOrg: '',
+    designOrgWebsite: '',
+    coolant: '',
+    moderator: '',
+    designStatus: '',
+    country: '',
+    type: '',
+    purpose: '',
+    coreHeight: '',
+    equivCoreDiameter: '',
+    avgLinearHeatRate: '',
+    avgFuelPowerDensity: '',
+    avgCorePowerDensity: '',
+    outerCoreDiameterFuelRods: '',
+    rodArray: '',
+    latticeGeometry: '',
+    numOfFuelAssemblies: '',
+    neutronSpectrum: '',
+    thermalOutput: '',
+    outputGross: '',
+    outputNet: '',
+    efficiency: '',
+    thermodynamicCycle: '',
+    nonElecApplications: '',
+    fuelMaterial: '',
+    claddingMaterial: '',
+    reloadFuelEnrichment: '',
+    fuelCycleLength: '',
+    avgDischargeBurnup: '',
+    burnableAbsorber: '',
+    controlRodAbsorber: '',
+    solubleNeutronAbsorber: '',
+    steamFlowRate: '',
+    steamPressure: '',
+    steamTemp: '',
+    feedWaterFlowRate: '',
+    feedWaterTemp: '',
+    primaryCoolantFlowRate: '',
+    operatingPressure: '',
+    coolantInletTemp: '',
+    coolantOutletTemp: '',
+    deltaTemp: '',
+    innerDiameterCylindricalShell: '',
+    wallThicknessCylindricalShell: '',
+    baseMaterial: '',
+    totHeightInside: '',
+    transportWeight: '',
+  });
 
   // Fetch list of all reactors for search input dropdown
   const { data, isLoading } = useGetAllReactors();
 
   // Search for reactor via form submit
   const searchReactor = async (e) => {
-    e.preventDefault();
-    const inputtedReactor = e.target.elements.searchReactor.value;
+    try {
+      e.preventDefault();
+      const inputtedReactor = e.target.elements.searchReactor.value;
 
-    const fetchReactorData = async () => {
-      const response = await fetch(
-        `https://ardb.cyclic.app/api/${inputtedReactor}`
-      );
-      const json = await response.json();
-      setReactorData(json);
-    };
+      const fetchReactorData = async () => {
+        const response = await fetch(
+          `https://ardb.cyclic.app/api/${inputtedReactor}`
+        );
 
-    if (inputtedReactor !== '') {
-      await fetchReactorData().catch(console.error);
-      setIsActive(true);
-      e.target.elements.searchReactor.value = '';
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+
+        const json = await response.json();
+        setReactorData(json);
+      };
+
+      if (inputtedReactor !== '') {
+        await fetchReactorData();
+        setIsActive(true);
+        e.target.elements.searchReactor.value = '';
+      } else {
+        throw new Error('Please enter a reactor name');
+      }
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error(error.message);
+      }
     }
   };
 

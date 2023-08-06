@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export default function useGetAllReactorTypes() {
-  let [data, setData] = useState<ReactorInterface[]>([]);
+  let [data, setData] = useState<string[]>([]);
   let [isLoading, setIsLoading] = useState(false);
   let [isError, setIsError] = useState(false);
   let [error, setError] = useState('');

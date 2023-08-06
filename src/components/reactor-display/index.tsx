@@ -10,6 +10,7 @@ interface ReactorDisplayProps {
 }
 
 function ReactorDisplay({ reactorData }: ReactorDisplayProps) {
+  console.log(reactorData);
   return (
     <section id='displayResultArea' className='section__displayArea'>
       <div className='container container__reactorTitle'>
