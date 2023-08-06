@@ -33,16 +33,16 @@ As an energy wonk, I've notice how difficult it is find up to date information o
 
 This project is the second iteration of the arDB ([Version One Link](https://github.com/danjkim21/adv-nuclear-reactor-api)). This second iteration enhances the scraper to allow for multiple sources, and builds out the front end using <b>React.js. </b> It is a work in progress and the data is constantly evolving as I enhance my web scraper script and add new sources.
 
-**The Client Side Repository and Live Link can be found here:**
+**Navigate to Backend Repository:**
 
-- [https://github.com/danjkim21/adv-nuclear-reactor-client](https://github.com/danjkim21/adv-nuclear-reactor-client)
-- [https://ardb.vercel.app/](https://ardb.vercel.app/)
+- [https://github.com/danjkim21/adv-nuclear-reactor-api-v2](https://github.com/danjkim21/adv-nuclear-reactor-api-v2)
 
 ### How It's Made
 
 **Tech used:**
 
 - [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
 - [Puppeteer](https://github.com/puppeteer/puppeteer)
@@ -106,7 +106,8 @@ This API can be accessed via [https://ardb.cyclic.app/api](https://ardb.cyclic.a
 
 - [x] Finish building out the search reactor feature
 - [x] Interactive data table feature to sort reactors by specific item (eg. thermal output)
-- [ ] Feature to allow reactor developers to add reactor data
+- [ ] Feature: Build Login-authentication portal
+- [ ] Feature: to allow reactor developers to add reactor data
 - [ ] Refactor front end react and back end code
 
 See the [open issues](https://github.com/danjkim21/adv-nuclear-reactor-client/issues) for a full list of proposed features (and known issues).
