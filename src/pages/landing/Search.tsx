@@ -1,6 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
+interface SearchProps {
+  data: ReactorInterface[];
+  searchReactor(e: React.FormEvent<HTMLFormElement>): void;
+  isLoading: boolean;
+}
+
 function Search({ data, searchReactor, isLoading }) {
   const reactorSelections = data.map((reactor) => {
     return (

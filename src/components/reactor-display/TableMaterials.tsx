@@ -1,4 +1,8 @@
-function TableMaterials({ reactorData }) {
+interface TableMaterialsProps {
+  reactorData: ReactorInterface;
+}
+
+function TableMaterials({ reactorData }: TableMaterialsProps) {
   return (
     <>
       <div className='container container__table'>

@@ -1,7 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
 
-function Title({ appTitle }) {
+interface TitleProps {
+  appTitle: string;
+}
+
+function Title({ appTitle }: TitleProps) {
   return (
     <div className='container container__appTitle'>
       <h1 className='header__appTitle'>{appTitle}</h1>

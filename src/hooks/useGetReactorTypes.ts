@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 export default function useGetAllReactorTypes() {
-  let [data, setData] = useState([]);
-  let [isLoading, setIsLoading] = useState(false);
-  let [isError, setIsError] = useState(false);
-  let [error, setError] = useState(null);
+  const [data, setData] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     fetchData();
@@ -14,13 +14,21 @@ export default function useGetAllReactorTypes() {
     try {
       setIsLoading(true);
       const response = await fetch(`https://ardb.cyclic.app/api/categories`);
+
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+
       const json = await response.json();
       setData(json);
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
       setIsError(true);
-      setError(error);
+
+      if (error instanceof Error) {
+        setError(error.message);
+      }
     }
   };
 

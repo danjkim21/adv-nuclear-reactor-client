@@ -7,7 +7,11 @@ import {
   faExternalLinkAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
-function ReactorModal({ reactor }) {
+interface ReactorModalProps {
+  reactor: ReactorInterface;
+}
+
+function ReactorModal({ reactor }: ReactorModalProps) {
   return (
     <div id={reactor.name} className='modal__window'>
       <div className='modal__inner'>

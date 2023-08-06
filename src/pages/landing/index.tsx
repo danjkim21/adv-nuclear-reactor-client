@@ -7,33 +7,20 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import useGetAllReactors from '../../hooks/useGetAllReactors';
+import useGetReactor from '../../hooks/useGetReactor';
 
 function Landing() {
-  let [isActive, setIsActive] = useState(false);
-  let [reactorData, setReactorData] = useState([]);
-
   // Fetch list of all reactors for search input dropdown
   const { data, isLoading } = useGetAllReactors();
 
   // Search for reactor via form submit
-  const searchReactor = async (e) => {
+  const [input, setInput] = useState('');
+
+  const onSearchReactor = (e) => {
     e.preventDefault();
-    const inputtedReactor = e.target.elements.searchReactor.value;
-
-    const fetchReactorData = async () => {
-      const response = await fetch(
-        `https://ardb.cyclic.app/api/${inputtedReactor}`
-      );
-      const json = await response.json();
-      setReactorData(json);
-    };
-
-    if (inputtedReactor !== '') {
-      await fetchReactorData().catch(console.error);
-      setIsActive(true);
-      e.target.elements.searchReactor.value = '';
-    }
+    setInput(e.target.elements.searchReactor.value);
   };
+  const { data: reactorData, isActive } = useGetReactor(input);
 
   return (
     <>
@@ -43,7 +30,7 @@ function Landing() {
         {/* Form component - searches reactor API for reactor */}
         <Search
           data={data}
-          searchReactor={searchReactor}
+          searchReactor={onSearchReactor}
           isLoading={isLoading}
         />
 
