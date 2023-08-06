@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 export default function useGetAllReactorTypes() {
-  let [data, setData] = useState<string[]>([]);
-  let [isLoading, setIsLoading] = useState(false);
-  let [isError, setIsError] = useState(false);
-  let [error, setError] = useState('');
+  const [data, setData] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     fetchData();

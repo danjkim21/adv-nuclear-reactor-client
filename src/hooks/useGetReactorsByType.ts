@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 export default function useGetAllReactorsByType(type) {
-  let [data, setData] = useState<ReactorInterface[]>([]);
-  let [isLoading, setIsLoading] = useState(false);
-  let [isError, setIsError] = useState(false);
-  let [error, setError] = useState('');
+  const [data, setData] = useState<ReactorInterface[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     fetchData();
