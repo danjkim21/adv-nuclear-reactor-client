@@ -1,4 +1,10 @@
-function CategoryList({ categories, setTypeInput }) {
+interface CategoryListProps {
+  categories: string[];
+  setTypeInput: (type: string) => void;
+  isLoading?: boolean;
+}
+
+function CategoryList({ categories, setTypeInput }: CategoryListProps) {
   const categoriesSortedAlpha = categories.sort();
 
   const filterDataByType = (e) => {

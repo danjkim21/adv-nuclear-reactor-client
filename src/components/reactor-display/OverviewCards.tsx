@@ -6,7 +6,11 @@ import {
   faLightbulb,
 } from '@fortawesome/free-solid-svg-icons';
 
-function OverviewCards({ reactorData }) {
+interface ReactorDisplayProps {
+  reactorData: ReactorInterface;
+}
+
+function OverviewCards({ reactorData }: ReactorDisplayProps) {
   return (
     <div className='container container__cards'>
       <div className='card--light card__reactorData'>

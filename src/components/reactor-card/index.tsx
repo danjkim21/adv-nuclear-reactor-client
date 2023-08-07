@@ -9,7 +9,12 @@ import {
   faExternalLinkAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
-function ReactorCard({ data }) {
+interface ReactorCardProps {
+  data: ReactorInterface[];
+  isLoading?: boolean;
+}
+
+function ReactorCard({ data }: ReactorCardProps) {
   let card = data.map((reactor) => {
     return (
       <React.Fragment key={reactor._id}>

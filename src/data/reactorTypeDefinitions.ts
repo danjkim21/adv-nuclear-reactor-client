@@ -1,13 +1,6 @@
-import { useState } from 'react';
-import CategoryList from '../../components/category-list';
-import ReactorCard from '../../components/reactor-card';
-import Footer from '../../components/footer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-import useGetReactorTypes from '../../hooks/useGetReactorTypes';
-import useGetReactorsByType from '../../hooks/useGetReactorsByType';
+import { ReactorTypeDefinitionsInterface } from '../types/definitions';
 
-const reactorTypeDefinitions = {
+export const reactorTypeDefinitions: ReactorTypeDefinitionsInterface = {
   ALL: { title: 'All Reactors', desc: '' },
   BWR: {
     title: 'Boiling Water Reactors',
@@ -63,70 +56,3 @@ const reactorTypeDefinitions = {
       'https://www.iaea.org/publications/12201/integral-pressurized-water-reactor-simulator-manual',
   },
 };
-
-function Reactors() {
-  const [typeInput, setTypeInput] = useState('ALL');
-  const reactorTypeInfo = reactorTypeDefinitions[typeInput];
-
-  // Fetch Reactor categories for side bar filtering
-  const { data: reactorTypes, isLoading: isLoadingTypes } =
-    useGetReactorTypes();
-
-  // Fetch Reactors by reactor type (category)
-  const { data: filteredReactors, isLoading: isLoadingFiltered } =
-    useGetReactorsByType(typeInput);
-
-  return (
-    <section className='section__reactors'>
-      <div className='container container__reactors'>
-        <div className='container container__header'>
-          <h1 className='page__header'>
-            Open Source Data for Professionals and Developers
-          </h1>
-          <p className='page__contentDescrip'>
-            You are exploring all available scraped datasets from all
-            categories. Available data includes reactor information related to
-            design specifications, reactor core, coolant system, core materials,
-            and more. If you find new data or would like to provide updates,
-            feel free to login and submit a request.
-          </p>
-        </div>
-      </div>
-      <div className='container container__flex'>
-        {/* sidebar containing filtering for reactors */}
-        <div className='col col--side'>
-          <div className='container__sidebar'>
-            <h2 className='sidebar__title'>Categories</h2>
-            {isLoadingTypes && <FontAwesomeIcon icon={faSpinner} spinPulse />}
-            {!isLoadingTypes && (
-              <CategoryList
-                categories={reactorTypes}
-                isLoading={isLoadingTypes}
-                setTypeInput={setTypeInput}
-              />
-            )}
-          </div>
-        </div>
-        {/* Displays all reactors in cards */}
-        <div className='col col--main'>
-          <div className='container__scrollMain'>
-            <h2>{reactorTypeInfo?.title && reactorTypeInfo.title}</h2>
-            <p>{reactorTypeInfo?.desc && reactorTypeInfo.desc}</p>
-            {isLoadingFiltered && (
-              <FontAwesomeIcon icon={faSpinner} spinPulse />
-            )}
-            {!isLoadingFiltered && (
-              <ReactorCard
-                data={filteredReactors}
-                isLoading={isLoadingFiltered}
-              />
-            )}
-          </div>
-        </div>
-      </div>
-      <Footer />
-    </section>
-  );
-}
-
-export default Reactors;

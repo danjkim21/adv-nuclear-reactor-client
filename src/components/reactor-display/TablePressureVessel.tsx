@@ -1,4 +1,8 @@
-function TablePressureVessel({ reactorData }) {
+interface TablePressureVesselProps {
+  reactorData: ReactorInterface;
+}
+
+function TablePressureVessel({ reactorData }: TablePressureVesselProps) {
   return (
     <>
       <div className='container container__table'>
