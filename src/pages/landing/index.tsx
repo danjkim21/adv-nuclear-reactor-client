@@ -14,12 +14,18 @@ function Landing() {
   const { data, isLoading } = useGetAllReactors();
 
   // Search for reactor via form submit
-  const [input, setInput] = useState('');
+  const [selection, setSelection] = useState<string>('');
+  const [input, setInput] = useState<string>('');
+
+  const onInputSelection = (selectOption) => {
+    setSelection(selectOption.label);
+  };
 
   const onSearchReactor = (e) => {
     e.preventDefault();
-    setInput(e.target.elements.searchReactor.value);
+    setInput(selection);
   };
+
   const { data: reactorData, isActive } = useGetReactor(input);
 
   return (
@@ -30,7 +36,8 @@ function Landing() {
         {/* Form component - searches reactor API for reactor */}
         <Search
           data={data}
-          searchReactor={onSearchReactor}
+          handleInputSelection={onInputSelection}
+          handleSearchReactor={onSearchReactor}
           isLoading={isLoading}
         />
 
