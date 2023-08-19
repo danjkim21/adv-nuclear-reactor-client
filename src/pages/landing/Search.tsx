@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Select from 'react-select';
 
 interface SearchProps {
@@ -14,56 +13,45 @@ function Search({
   handleInputSelection,
   handleSearchReactor,
   isLoading,
-}) {
+}: SearchProps) {
   const selectOptions = data.map((reactor) => {
     return { value: reactor._id, label: reactor.name };
   });
 
-  // const reactorSelections = data.map((reactor) => {
-  //   return (
-  //     <option key={reactor._id} value={reactor.name}>
-  //       {reactor.name}
-  //     </option>
-  //   );
-  // });
+  //  TODO: Update Select Styling to match arDB theme
+  const customStyles = {
+    option: (defaultStyles, state) => ({
+      ...defaultStyles,
+      // color: state.isSelected ? "#212529" : "#fff",
+      // backgroundColor: state.isSelected ? "#a0a0a0" : "#212529",
+    }),
+
+    control: (defaultStyles) => ({
+      ...defaultStyles,
+      border: 'none',
+      boxShadow: 'none',
+    }),
+    singleValue: (defaultStyles) => ({
+      ...defaultStyles,
+    }),
+  };
 
   return (
     <div className='container container__appSearch'>
-      {/* <form className='form__appSearch' onSubmit={searchReactor}>
-        <input
-          className='searchBtn'
-          type='text'
-          list='reactors'
-          name='searchReactor'
-          id='searchReactor'
-          placeholder={
-            isLoading ? 'Fetching reactor data' : 'Input reactor name'
-          }
-        /> */}
-
-      {/* Test Spinner on isLoading */}
-      {/* {isLoading && (
-          <FontAwesomeIcon
-            className='searchSpinner'
-            icon={faSpinner}
-            spinPulse
-          />
-        )}
-
-        <datalist id='reactors'>{reactorSelections}</datalist>
-        <input className='submitBtn' type='submit' value={`Search Database`} />
-      </form> */}
-
       <form className='form__appSearch' onSubmit={handleSearchReactor}>
         <Select
           className='basic-single'
           classNamePrefix='select'
+          name='reactor-select'
+          placeholder={
+            isLoading ? 'Fetching reactor data' : 'Input reactor name'
+          }
           isLoading={isLoading}
           isClearable={true}
           isSearchable={true}
-          name='reactor-select'
           options={selectOptions}
           onChange={handleInputSelection}
+          styles={customStyles}
         />
         <input className='submitBtn' type='submit' value={`Search Database`} />
       </form>
