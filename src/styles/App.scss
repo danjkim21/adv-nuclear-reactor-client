@@ -206,20 +206,18 @@ html {
 }
 .form__appSearch {
   position: relative;
-  width: fit-content;
-}
-.searchBtn {
-  height: 50px;
-  width: 375px;
-  padding-left: 1rem;
-  border: none;
-  border-right: none;
-  border-radius: 4px 0 0 4px;
-}
-.searchSpinner {
-  position: absolute;
-  top: 1rem;
-  right: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // react-select styling overrides
+  .react-select-container {
+    .react-select__control {
+      height: 50px;
+      width: 375px;
+      border-radius: 4px 0 0 4px;
+    }
+  }
 }
 .submitBtn {
   height: 50px;
@@ -620,9 +618,20 @@ pre > span {
     letter-spacing: -0.295rem;
   }
   /* Landing Page search form */
-  .searchBtn {
-    width: 100%;
-    border-radius: 4px;
+
+  .form__appSearch {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 75vw;
+
+    .react-select-container {
+      width: inherit;
+      
+      .react-select__control {
+        width: 100%;
+        border-radius: 4px;
+      }
+    }
   }
   .searchSpinner {
     right: 5vw;

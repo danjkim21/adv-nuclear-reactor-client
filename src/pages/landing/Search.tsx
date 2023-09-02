@@ -40,8 +40,8 @@ function Search({
     <div className='container container__appSearch'>
       <form className='form__appSearch' onSubmit={handleSearchReactor}>
         <Select
-          className='basic-single'
-          classNamePrefix='select'
+          className='react-select-container'
+          classNamePrefix='react-select'
           name='reactor-select'
           placeholder={
             isLoading ? 'Fetching reactor data' : 'Input reactor name'
