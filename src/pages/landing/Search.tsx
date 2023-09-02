@@ -14,16 +14,23 @@ function Search({
   handleSearchReactor,
   isLoading,
 }: SearchProps) {
-  const selectOptions = data.map((reactor) => {
-    return { value: reactor._id, label: reactor.name };
-  });
+  const selectOptions = data
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map((reactor) => {
+      const reactorFullName =
+        reactor.name !== reactor.fullName ? `(${reactor.fullName})` : '';
+      const reactorLabel = `${reactor.name} ${reactorFullName}`;
+
+      return {
+        value: reactor.name,
+        label: reactorLabel,
+      };
+    });
 
   //  TODO: Update Select Styling to match arDB theme
   const customStyles = {
     option: (defaultStyles, state) => ({
       ...defaultStyles,
-      // color: state.isSelected ? "#212529" : "#fff",
-      // backgroundColor: state.isSelected ? "#a0a0a0" : "#212529",
     }),
 
     control: (defaultStyles) => ({
@@ -47,7 +54,7 @@ function Search({
             isLoading ? 'Fetching reactor data' : 'Input reactor name'
           }
           isLoading={isLoading}
-          isClearable={true}
+          // isClearable={true}
           isSearchable={true}
           options={selectOptions}
           onChange={handleInputSelection}

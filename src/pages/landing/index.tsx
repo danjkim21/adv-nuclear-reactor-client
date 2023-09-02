@@ -18,7 +18,7 @@ function Landing() {
   const [input, setInput] = useState<string>('');
 
   const onInputSelection = (selectOption) => {
-    setSelection(selectOption.label);
+    setSelection(selectOption.value);
   };
 
   const onSearchReactor = (e) => {
