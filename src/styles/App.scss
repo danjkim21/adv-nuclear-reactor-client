@@ -1,19 +1,4 @@
-/************* Root App Variables *************/
-/* Base Colors */
-$white: #ffffff;
-$grey: #e3e3e3;
-$grey__light: #d6d6da;
-$grey__medium: #242424;
-$grey__dark: #25292e;
-$black: #000000;
-$purple__primary: #473eb3;
-$purple__secondary: #5d51e4;
-$purple__accent--primary: #656cf6;
-$purple__accent2--secondary: #bdc0fa;
-$purple__light--extra: #f1f0f3;
-$purple__light: #dcdbe5;
-$purple__medium: #938fb9;
-$purple__grey: #292934;
+@use './variables';
 
 /************* General Styling *************/
 html {
@@ -35,7 +20,7 @@ html {
   margin-bottom: 1rem;
 }
 .section__main .container__appDivider {
-  color: $purple__grey;
+  color: variables.$purple__grey;
   margin-bottom: 2rem;
   width: 100%;
   display: block;
@@ -54,7 +39,7 @@ html {
   top: 50%;
   width: 800%;
   height: 1.1px;
-  background: $purple__grey;
+  background: variables.$purple__grey;
 }
 .appDivider__text::before {
   right: 100%;
@@ -72,8 +57,8 @@ html {
   margin-bottom: 3rem;
 }
 .card--dark {
-  background-color: $purple__grey;
-  border: 1px solid $purple__accent--primary;
+  background-color: variables.$purple__grey;
+  border: 1px solid variables.$purple__accent--primary;
   border-radius: 4px;
 }
 .card--light {
@@ -86,18 +71,18 @@ html {
 }
 .btn_secondary {
   padding: 0.765rem 2.35rem;
-  border: 2px solid $grey__light;
+  border: 2px solid variables.$grey__light;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 700;
-  color: $grey__medium;
+  color: variables.$grey__medium;
   color: rgb(107, 104, 119);
-  background-color: $white;
+  background-color: variables.$white;
 }
 .btn_secondary:hover {
-  color: $white;
-  border: 2px solid $purple__primary;
-  background-color: $purple__primary;
+  color: variables.$white;
+  border: 2px solid variables.$purple__primary;
+  background-color: variables.$purple__primary;
 }
 .page__contentDescrip {
   font-weight: 500;
@@ -112,8 +97,8 @@ html {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: $purple__light--extra;
-  border-bottom: 1px solid $grey__light;
+  background-color: variables.$purple__light--extra;
+  border-bottom: 1px solid variables.$grey__light;
 }
 .navList {
   display: flex;
@@ -130,7 +115,7 @@ html {
   margin-right: auto;
   font-size: 1.55rem;
   letter-spacing: -0.085rem;
-  color: $black;
+  color: variables.$black;
   font-weight: 700;
   text-decoration: none;
 }
@@ -145,15 +130,15 @@ html {
   transition: all ease-in-out 100ms;
 }
 .navList_items > .navList_link:hover {
-  border: 1px solid $purple__primary;
-  color: $purple__primary;
+  border: 1px solid variables.$purple__primary;
+  color: variables.$purple__primary;
 }
 .navList_items > .btn_primary,
 .navList_items > .btn_primary:hover {
   padding: 0.6rem 1.35rem;
   border: none;
-  color: $white;
-  background-color: $purple__primary;
+  color: variables.$white;
+  background-color: variables.$purple__primary;
 }
 
 /************* Footer Component Styling *************/
@@ -161,7 +146,7 @@ html {
   height: 15vh;
   width: 100%;
   padding: 1.5rem 0;
-  border-top: 1px solid $grey__light;
+  border-top: 1px solid variables.$grey__light;
   background-color: inherit;
 }
 .row__footer {
@@ -172,7 +157,7 @@ html {
 .socials__icon {
   margin-left: 0.5rem;
   font-size: 1.55rem;
-  color: $purple__primary;
+  color: variables.$purple__primary;
 }
 /************* '/' route styling Main Page Styling *************/
 .section__main {
@@ -183,7 +168,7 @@ html {
   justify-content: center;
   align-items: center;
   /* background-size: contain; */
-  background-color: $purple__light;
+  background-color: variables.$purple__light;
   background-color: #dcdbe5c7;
   background-image: url('../assets/bg-shapes.svg')
 }
@@ -202,7 +187,7 @@ html {
 }
 .app__icon {
   font-size: 1.25rem;
-  color: $purple__primary;
+  color: variables.$purple__primary;
 }
 .form__appSearch {
   position: relative;
@@ -225,8 +210,8 @@ html {
   border-left: none;
   border-radius: 0 4px 4px 0;
   border: none;
-  color: $white;
-  background-color: $purple__primary;
+  color: variables.$white;
+  background-color: variables.$purple__primary;
   font-weight: 700;
 }
 .submitBtn:hover {
@@ -237,13 +222,13 @@ html {
 }
 .container__appDesc > .text__appDesc {
   max-width: 750px;
-  color: $purple__grey;
+  color: variables.$purple__grey;
   font-weight: 500;
   font-size: 16.5px;
   margin: 0;
 }
 .link__actionIcon {
-  color: $black;
+  color: variables.$black;
 }
 .button__actionIcon {
   font-size: 1.75rem;
@@ -273,14 +258,14 @@ html {
 
 /* Reactor Input Display area */
 .section__displayArea {
-  color: $grey__medium;
+  color: variables.$grey__medium;
 }
 .section__displayArea {
   height: auto;
   padding-top: 6.25rem;
   padding-bottom: 6.25rem;
-  background-color: $purple__light--extra;
-  border-top: 1px solid $grey__light;
+  background-color: variables.$purple__light--extra;
+  border-top: 1px solid variables.$grey__light;
 }
 .title__reactorName {
   font-size: 2.5rem;
@@ -293,7 +278,7 @@ html {
   font-weight: 600;
 }
 .subtitle__link {
-  color: $purple__accent--primary;
+  color: variables.$purple__accent--primary;
   text-decoration: none;
 }
 .subtitle__link:hover {
@@ -315,7 +300,7 @@ html {
   overflow-y: auto;
 }
 .card__title {
-  color: $purple__accent2--secondary;
+  color: variables.$purple__accent2--secondary;
   color: rgba(101, 108, 246, 0.839);
   margin-top: 0;
 }
@@ -323,14 +308,14 @@ html {
   display: flex;
 }
 .reactorData__icon {
-  color: $purple__accent--primary;
-  color: $purple__secondary;
+  color: variables.$purple__accent--primary;
+  color: variables.$purple__secondary;
   font-size: 1.55rem;
   margin-right: 1rem;
 }
 .reactorData__detail {
-  color: $purple__accent--primary;
-  color: $purple__secondary;
+  color: variables.$purple__accent--primary;
+  color: variables.$purple__secondary;
   font-size: 1.55rem;
   font-weight: 600;
   margin: 0 0 0.25rem 0;
@@ -372,7 +357,7 @@ html {
   left: 50%;
   padding: 2em;
   transform: translate(-50%, -50%);
-  border: 1px solid $grey__light;
+  border: 1px solid variables.$grey__light;
   border-radius: 4px;
   background: white;
   overflow-y: auto;
@@ -397,7 +382,7 @@ html {
   padding-top: 6.5rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-  background-color: $purple__light--extra;
+  background-color: variables.$purple__light--extra;
 }
 .container__reactors {
   max-width: 1400px;
@@ -410,7 +395,7 @@ html {
   max-width: 1400px;
   display: flex;
   padding-top: 2.5rem;
-  border-top: 1px solid $grey__light;
+  border-top: 1px solid variables.$grey__light;
 }
 .col--side {
   width: 33.3333%;
@@ -420,14 +405,14 @@ html {
 }
 .container__sidebar {
   max-width: 300px;
-  background-color: $white;
+  background-color: variables.$white;
   padding: 1rem 1.5rem 1rem 1.5rem;
-  border: 1px solid $grey__light;
+  border: 1px solid variables.$grey__light;
   border-radius: 6px;
   margin-right: 1rem;
 }
 .sidebar__title {
-  color: $purple__grey;
+  color: variables.$purple__grey;
 }
 .container__scrollMain {
   padding-top: 1rem;
@@ -441,7 +426,7 @@ html {
   text-decoration: none;
 }
 .categoryList__item {
-  color: $purple__grey;
+  color: variables.$purple__grey;
   border-radius: 4px;
   font-size: 1.1rem;
   font-weight: 500;
@@ -449,8 +434,8 @@ html {
   transition: all ease-in-out 75ms;
 }
 .categoryList__item:hover {
-  color: $purple__light--extra;
-  background-color: $purple__primary;
+  color: variables.$purple__light--extra;
+  background-color: variables.$purple__primary;
 }
 
 .container__cards--all {
@@ -460,8 +445,8 @@ html {
 .card__reactorData--all {
   display: flex;
   flex-direction: column;
-  background-color: $white;
-  border: 1px solid $grey__light;
+  background-color: variables.$white;
+  border: 1px solid variables.$grey__light;
   width: 47.5%;
   max-width: 425px;
   min-height: 255px;
@@ -470,13 +455,13 @@ html {
 .card__reactorData--all .card__title,
 .modal-window .card__title {
   margin-bottom: 0;
-  color: $purple__grey;
+  color: variables.$purple__grey;
 }
 .card__reactorData--all .card__subtitle,
 .modal-window .card__subtitle {
   margin-top: 0;
   font-weight: 500;
-  color: $purple__accent--primary;
+  color: variables.$purple__accent--primary;
 }
 .card__reactorData--all:hover {
   background-color: rgb(243 243 254);
@@ -490,20 +475,20 @@ html {
   margin-top: auto;
   display: flex;
   justify-content: flex-end;
-  color: $purple__grey;
+  color: variables.$purple__grey;
 }
 .link__modal--button:hover {
-  color: $purple__accent--primary;
+  color: variables.$purple__accent--primary;
 }
 .card__reactorData--all .card__title:hover {
-  color: $purple__accent--primary;
+  color: variables.$purple__accent--primary;
 }
 .card__reactorProp {
   display: block;
-  color: $purple__grey;
+  color: variables.$purple__grey;
 }
 .card__icon {
-  color: $purple__secondary;
+  color: variables.$purple__secondary;
 }
 .tableModal {
   display: flex;
@@ -511,7 +496,7 @@ html {
   align-items: flex-start;
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid $grey__light;
+  border-top: 1px solid variables.$grey__light;
 }
 .tableModal__title {
   font-size: 1.05rem;
@@ -533,7 +518,7 @@ html {
   padding-left: 20%;
   padding-right: 20%;
   // background-image: url('../assets/bg-shapes.svg');
-  background-color: $purple__light--extra;
+  background-color: variables.$purple__light--extra;
 }
 .container__desc {
   margin-top: 3rem;
@@ -541,20 +526,20 @@ html {
   width: 100%;
   padding-bottom: 2.5rem;
   align-items: flex-start;
-  border-bottom: 1px solid $grey__light;
+  border-bottom: 1px solid variables.$grey__light;
 }
 .container__body {
   min-width: 100%;
   padding: 1rem;
   border-radius: 4px;
-  border: 1px solid $grey__light;
-  background-color: $white;
+  border: 1px solid variables.$grey__light;
+  background-color: variables.$white;
 }
 pre {
   padding: 1rem 1rem;
-  color: $grey__medium;
-  background-color: $white;
-  border: 1px solid $grey__light;
+  color: variables.$grey__medium;
+  background-color: variables.$white;
+  border: 1px solid variables.$grey__light;
   border-radius: 4px;
   white-space: pre-wrap; /* Since CSS 2.1 */
   white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
@@ -564,7 +549,7 @@ pre {
 }
 pre > span {
   font-weight: 700;
-  color: $purple__accent--primary;
+  color: variables.$purple__accent--primary;
 }
 .list__reactors {
   padding-left: 0;
@@ -582,7 +567,7 @@ pre > span {
   padding: 1rem;
   /* background-color: rgba(255, 255, 255); */
   border-radius: 12px;
-  /* border: 1px solid $grey__light; */
+  /* border: 1px solid variables.$grey__light; */
 }
 /************* Media Queries & Mobile Responsiveness *************/
 /* md */

@@ -1,4 +1,4 @@
-@use '../../styles/App.scss';
+@use '../../styles/variables.scss';
 
 .form-login {
   .form-group {
@@ -14,20 +14,20 @@
 
     .form-input {
       height: 40px;
-      border: 2px solid App.$purple__accent2--secondary;
+      border: 2px solid variables.$purple__accent2--secondary;
       border-radius: 4px;
       padding-left: 0.45rem;
 
       &:focus {
-        border: 2px solid App.$purple__accent--primary;
+        border: 2px solid variables.$purple__accent--primary;
       }
     }
 
     .form-submit {
       height: 40px;
-      color: App.$white;
-      background-color: App.$purple__primary;
-      border: 1px solid App.$purple__primary;
+      color: variables.$white;
+      background-color: variables.$purple__primary;
+      border: 1px solid variables.$purple__primary;
       border-radius: 4px;
       font-weight: 700;
 
