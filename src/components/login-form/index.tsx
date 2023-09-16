@@ -48,7 +48,13 @@ export default function LoginForm() {
         />
       </div>
       <div className='form-group'>
-        <input className='form-submit' type='submit' value='Login' />
+        <input
+          className='form-submit'
+          type='submit'
+          value='Login'
+          // Remove disabled once backed is ready
+          disabled
+        />
       </div>
     </form>
   );
