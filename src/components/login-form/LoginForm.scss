@@ -1,0 +1,39 @@
+@use '../../styles/App.scss';
+
+.form-login {
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+
+    .form-input, .form-submit {
+      width: 100%;
+    }
+
+    .form-input {
+      height: 40px;
+      border: 2px solid App.$purple__accent2--secondary;
+      border-radius: 4px;
+      padding-left: 0.45rem;
+
+      &:focus {
+        border: 2px solid App.$purple__accent--primary;
+      }
+    }
+
+    .form-submit {
+      height: 40px;
+      color: App.$white;
+      background-color: App.$purple__primary;
+      border: 1px solid App.$purple__primary;
+      border-radius: 4px;
+      font-weight: 700;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }  
+}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './LoginForm.scss';
 
 export default function LoginForm() {
   const [formData, setFormData] = useState<any>({
@@ -15,49 +16,39 @@ export default function LoginForm() {
     e.preventDefault();
     console.log('handleSubmit: ', formData);
   };
+
   return (
-    <form className='' onSubmit={handleSubmit}>
+    <form className='form-login' onSubmit={handleSubmit}>
       <div className='form-group'>
-        <div className='col-1 col-ml-auto'>
-          <label className='form-label' htmlFor='username'>
-            Username
-          </label>
-        </div>
-        <div className=''>
-          <input
-            className='form-input'
-            type='text'
-            id='username'
-            name='username'
-            placeholder='Username'
-            value={formData.username}
-            onChange={handleChange}
-          />
-        </div>
+        <label className='form-label' htmlFor='username'>
+          Email Address
+        </label>
+        <input
+          className='form-input'
+          id='username'
+          type='text'
+          name='username'
+          placeholder='Enter Email Address'
+          value={formData.username}
+          onChange={handleChange}
+        />
       </div>
       <div className='form-group'>
-        <div className=''>
-          <label className='form-label' htmlFor='password'>
-            Password:{' '}
-          </label>
-        </div>
-        <div className=''>
-          <input
-            className='form-input'
-            placeholder='password'
-            type='password'
-            name='password'
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </div>
+        <label className='form-label' htmlFor='password'>
+          Password
+        </label>
+        <input
+          className='form-input'
+          id='password'
+          type='password'
+          name='password'
+          placeholder='Enter Password'
+          value={formData.password}
+          onChange={handleChange}
+        />
       </div>
       <div className='form-group'>
-        <div className=''></div>
-        {/* <button className='' onSubmit={handleSubmit} type='submit'>
-          Login
-        </button> */}
-        <input type='submit' value='Login' />
+        <input className='form-submit' type='submit' value='Login' />
       </div>
     </form>
   );
