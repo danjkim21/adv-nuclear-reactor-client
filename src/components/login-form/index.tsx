@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import './LoginForm.scss';
 import { useLocalStorage } from '@uidotdev/usehooks';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginForm() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<any>({
     username: '',
     password: '',
@@ -28,14 +30,17 @@ export default function LoginForm() {
           password: formData.password,
         }),
       });
+      const json = await response.json();
 
       if (!response.ok) {
         // throw new Error(response.statusText);
         throw new Error('Invalid username or password');
       }
+
       if (response.ok) {
-        console.log('Logged in');
-        setUserData({ username: formData.username, authenticated: true });
+        // Valid login > save user data to local storage and navigate to dashboard
+        setUserData({ username: json.username, authenticated: true });
+        navigate('/dashboard');
       }
     } catch (error) {
       if (error instanceof Error) {
