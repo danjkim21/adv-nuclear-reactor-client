@@ -1,10 +1,12 @@
 import { Outlet, Route, Routes } from 'react-router-dom';
+import { useLocalStorage } from '@uidotdev/usehooks';
+
 import Header from '../components/header';
 import Landing from '../pages/landing';
 import About from '../pages/about';
 import Login from '../pages/login';
 import Reactors from '../pages/reactors';
-import { useLocalStorage } from '@uidotdev/usehooks';
+import Dashboard from '../pages/dashboard';
 
 export default function AppRoutes() {
   const [userData, setUserData] = useLocalStorage<any>('userData', null);
@@ -12,6 +14,7 @@ export default function AppRoutes() {
   return (
     <>
       <Routes>
+        {/* Client Site */}
         <Route
           element={
             <>
@@ -25,6 +28,9 @@ export default function AppRoutes() {
           <Route path='/about' element={<About />} />
           <Route path='/login' element={<Login />} />
         </Route>
+
+        {/* Authenticated Users Site */}
+        <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
     </>
   );
