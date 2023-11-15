@@ -10,6 +10,7 @@ export default function LoginForm() {
     password: '',
   });
   const [userData, setUserData] = useLocalStorage<any>('userData', null);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -30,64 +31,62 @@ export default function LoginForm() {
           password: formData.password,
         }),
       });
-      const json = await response.json();
 
-      if (!response.ok) {
+      if (!response.ok || response.status !== 200) {
         // throw new Error(response.statusText);
         throw new Error('Invalid username or password');
       }
 
-      if (response.ok) {
-        // Valid login > save user data to local storage and navigate to dashboard
-        setUserData({ username: json.username, authenticated: true });
-        navigate('/dashboard');
-      }
+      const json = await response.json();
+
+      // Valid login > save user data to local storage and navigate to dashboard
+      setUserData({ username: json.username, authenticated: true });
+      navigate('/dashboard');
     } catch (error) {
       if (error instanceof Error) {
-        console.log(error);
+        setErrorMessage(error.message);
       }
     }
   };
 
   return (
-    <form className='form-login' onSubmit={handleSubmit}>
-      <div className='form-group'>
-        <label className='form-label' htmlFor='username'>
-          Email Address
-        </label>
-        <input
-          className='form-input'
-          id='username'
-          type='text'
-          name='username'
-          placeholder='Enter Email Address'
-          value={formData.username}
-          onChange={handleChange}
-        />
-      </div>
-      <div className='form-group'>
-        <label className='form-label' htmlFor='password'>
-          Password
-        </label>
-        <input
-          className='form-input'
-          id='password'
-          type='password'
-          name='password'
-          placeholder='Enter Password'
-          value={formData.password}
-          onChange={handleChange}
-        />
-      </div>
-      <div className='form-group'>
-        <input
-          className='form-submit'
-          type='submit'
-          value='Login'
-          // Remove disabled once backed is ready
-          // disabled
-        />
-      </div>
-    </form>
+    <>
+      <form className='form-login' onSubmit={handleSubmit}>
+        <div className='form-group'>
+          <label className='form-label' htmlFor='username'>
+            Email Address
+          </label>
+          <input
+            className='form-input'
+            id='username'
+            type='text'
+            name='username'
+            placeholder='Enter Email Address'
+            required
+            value={formData.username}
+            onChange={handleChange}
+          />
+        </div>
+        <div className='form-group'>
+          <label className='form-label' htmlFor='password'>
+            Password
+          </label>
+          <input
+            className='form-input'
+            id='password'
+            type='password'
+            name='password'
+            placeholder='Enter Password'
+            required
+            value={formData.password}
+            onChange={handleChange}
+          />
+        </div>
+        <div className='form-group'>
+          <input className='form-submit' type='submit' value='Login' />
+        </div>
+      </form>
+      {errorMessage && <span className='alert-error'>{errorMessage}</span>}
+    </>
   );
 }

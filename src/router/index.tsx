@@ -4,8 +4,11 @@ import Landing from '../pages/landing';
 import About from '../pages/about';
 import Login from '../pages/login';
 import Reactors from '../pages/reactors';
+import { useLocalStorage } from '@uidotdev/usehooks';
 
 export default function AppRoutes() {
+  const [userData, setUserData] = useLocalStorage<any>('userData', null);
+
   return (
     <>
       <Header />
