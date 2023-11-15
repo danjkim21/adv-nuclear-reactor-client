@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import { useLocalStorage } from '@uidotdev/usehooks';
 
 function Header() {
+  const [userData, setUserData] = useLocalStorage<any>('userData', null);
+
   return (
     <header className='section__header'>
       <Link className='mainApp__link' to='/'>
@@ -26,9 +29,15 @@ function Header() {
             </Link>
           </li>
           <li className='navList_items'>
-            <Link className='navList_link btn_primary' to='/dev'>
-              Login
-            </Link>
+            {userData?.authenticated ? (
+              <Link className='navList_link btn_primary' to='/dashboard'>
+                Dashboard
+              </Link>
+            ) : (
+              <Link className='navList_link btn_primary' to='/login'>
+                Login
+              </Link>
+            )}
           </li>
         </ul>
       </nav>
