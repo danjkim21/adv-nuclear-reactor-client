@@ -13,12 +13,14 @@ export default function LoginForm() {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
+    // Add form validation
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // TODO: Move submit/login function into a custom hook
     try {
       const response = await fetch(`https://ardb.cyclic.app/auth/login`, {
         method: 'POST',
@@ -33,6 +35,7 @@ export default function LoginForm() {
       });
 
       if (!response.ok || response.status !== 200) {
+        // Expand statusText's in backend
         // throw new Error(response.statusText);
         throw new Error('Invalid username or password');
       }
