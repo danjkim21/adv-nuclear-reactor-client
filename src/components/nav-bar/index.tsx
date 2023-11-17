@@ -12,8 +12,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Menu, MenuItem } from "@mui/material";
-import { AccountCircle } from "@mui/icons-material";
+import { Avatar, ListItemIcon, Menu, MenuItem } from "@mui/material";
+import { AccountCircle, Logout } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "@uidotdev/usehooks";
 
@@ -36,6 +36,8 @@ export default function NavBar() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const handleNavigateToProfile = () => navigate("/profile");
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -138,7 +140,7 @@ export default function NavBar() {
                 onClick={handleMenu}
                 color="inherit"
               >
-                <AccountCircle />
+                <Avatar sx={{ width: 32, height: 32 }}>U</Avatar>
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -152,11 +154,33 @@ export default function NavBar() {
                   vertical: "top",
                   horizontal: "right",
                 }}
+                PaperProps={{
+                  elevation: 0,
+                  sx: {
+                    overflow: "visible",
+                    filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                    mt: 1.5,
+                    "& .MuiAvatar-root": {
+                      width: 32,
+                      height: 32,
+                      ml: -0.5,
+                      mr: 1,
+                    },
+                  },
+                }}
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleLogOut}>Log Out</MenuItem>
+                <MenuItem onClick={handleNavigateToProfile}>
+                  <Avatar /> Profile
+                </MenuItem>
+                <Divider />
+                <MenuItem onClick={handleLogOut}>
+                  <ListItemIcon>
+                    <Logout fontSize="small" />
+                  </ListItemIcon>
+                  Logout
+                </MenuItem>
               </Menu>
             </div>
           </Box>
