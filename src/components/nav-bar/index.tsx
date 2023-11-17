@@ -140,7 +140,7 @@ export default function NavBar() {
                 onClick={handleMenu}
                 color="inherit"
               >
-                <Avatar sx={{ width: 32, height: 32 }}>U</Avatar>
+                <Avatar sx={{ width: 32, height: 32 }} />
               </IconButton>
               <Menu
                 id="menu-appbar"
