@@ -14,15 +14,13 @@ function CategoryList({ categories, setTypeInput }: CategoryListProps) {
 
   let category = categoriesSortedAlpha.map((type) => {
     return (
-      // <a className='categoryList__link' key={type} href='#'>
-      <li className='categoryList__item' key={type} onClick={filterDataByType}>
+      <li className="categoryList__item" key={type} onClick={filterDataByType}>
         {type}
       </li>
-      // </a>
     );
   });
 
-  return <ul className='categoryList'>{category}</ul>;
+  return <ul className="categoryList">{category}</ul>;
 }
 
 export default CategoryList;
