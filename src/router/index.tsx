@@ -9,52 +9,63 @@ import Dashboard from "../pages/dashboard";
 import ProtectedRoute from "../utils/ProtectedRoute";
 import UserManagement from "../pages/user-mgmt";
 import Profile from "../pages/profile";
+import { ThemeProvider, createTheme } from "@mui/material";
+import { blue, deepPurple } from "@mui/material/colors";
+
+const theme = createTheme({
+  palette: {
+    primary: deepPurple,
+    secondary: blue,
+  },
+});
 
 export default function AppRoutes() {
   return (
     <>
-      <Routes>
-        {/* Client Site */}
-        <Route
-          element={
-            <>
-              <Header />
-              <Outlet />
-            </>
-          }
-        >
-          <Route path="/" element={<Landing />} />
-          <Route path="/reactors" element={<Reactors />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-        </Route>
+      <ThemeProvider theme={theme}>
+        <Routes>
+          {/* Client Site */}
+          <Route
+            element={
+              <>
+                <Header />
+                <Outlet />
+              </>
+            }
+          >
+            <Route path="/" element={<Landing />} />
+            <Route path="/reactors" element={<Reactors />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+          </Route>
 
-        {/* Authenticated Users Site */}
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/users"
-          element={
-            <ProtectedRoute>
-              <UserManagement />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
+          {/* Authenticated Users Site */}
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/users"
+            element={
+              <ProtectedRoute>
+                <UserManagement />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </ThemeProvider>
     </>
   );
 }
