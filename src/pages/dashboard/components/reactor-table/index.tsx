@@ -46,7 +46,11 @@ export default function ReactorTable() {
     <div style={{ height: "65vh", width: "100%" }}>
       {isLoading && <CircularProgress />}
       {!isLoading && (
-        <DataGrid rows={rows} columns={columns} checkboxSelection />
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          // checkboxSelection
+        />
       )}
     </div>
   );
