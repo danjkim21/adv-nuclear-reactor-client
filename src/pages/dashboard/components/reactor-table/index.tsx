@@ -4,7 +4,19 @@ import { CircularProgress } from "@mui/material";
 
 const columns: GridColDef[] = [
   { field: "name", headerName: "Name", width: 130 },
-  { field: "fullName", headerName: "Full Name", width: 250 },
+  { field: "fullName", headerName: "Full Name", width: 200 },
+  {
+    field: "outputGross",
+    headerName: "Output (MWe)",
+    width: 150,
+    type: "number",
+  },
+  {
+    field: "thermalOutput",
+    headerName: "Thermal Output (MWth)",
+    width: 170,
+    type: "number",
+  },
   {
     field: "type",
     headerName: "Type",
