@@ -106,7 +106,7 @@ This API can be accessed via [https://ardb.cyclic.app/api](https://ardb.cyclic.a
 
 - [x] Finish building out the search reactor feature
 - [x] Interactive data table feature to sort reactors by specific item (eg. thermal output)
-- [ ] Feature: Build Login-authentication portal
+- [x] Feature: Build Login-authentication portal
 - [ ] Feature: to allow reactor developers to add reactor data
 - [ ] Refactor front end react and back end code
 
