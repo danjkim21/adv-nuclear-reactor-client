@@ -1,9 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Select from 'react-select';
+import Select from "react-select";
 
 interface SearchProps {
   data: ReactorInterface[];
-  handleInputSelection(any): void;
+  handleInputSelection(selectOption: any): void; // Fix type for selectOption
   handleSearchReactor(e: any): void;
   isLoading: boolean;
 }
@@ -18,7 +17,7 @@ function Search({
     .sort((a, b) => a.name.localeCompare(b.name))
     .map((reactor) => {
       const reactorFullName =
-        reactor.name !== reactor.fullName ? `(${reactor.fullName})` : '';
+        reactor.name !== reactor.fullName ? `(${reactor.fullName})` : "";
       const reactorLabel = `${reactor.name} ${reactorFullName}`;
 
       return {
@@ -35,8 +34,8 @@ function Search({
 
     control: (defaultStyles) => ({
       ...defaultStyles,
-      border: 'none',
-      boxShadow: 'none',
+      border: "none",
+      boxShadow: "none",
     }),
     singleValue: (defaultStyles) => ({
       ...defaultStyles,
@@ -44,14 +43,14 @@ function Search({
   };
 
   return (
-    <div className='container container__appSearch'>
-      <form className='form__appSearch' onSubmit={handleSearchReactor}>
+    <div className="container container__appSearch">
+      <form className="form__appSearch" onSubmit={handleSearchReactor}>
         <Select
-          className='react-select-container'
-          classNamePrefix='react-select'
-          name='reactor-select'
+          className="react-select-container"
+          classNamePrefix="react-select"
+          name="reactor-select"
           placeholder={
-            isLoading ? 'Fetching reactor data' : 'Input reactor name'
+            isLoading ? "Fetching reactor data" : "Input reactor name"
           }
           isLoading={isLoading}
           // isClearable={true}
@@ -60,7 +59,7 @@ function Search({
           onChange={handleInputSelection}
           styles={customStyles}
         />
-        <input className='submitBtn' type='submit' value={`Search Database`} />
+        <input className="submitBtn" type="submit" value={`Search Database`} />
       </form>
     </div>
   );

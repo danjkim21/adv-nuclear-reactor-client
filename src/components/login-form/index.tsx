@@ -1,16 +1,21 @@
-import { useState } from 'react';
-import './LoginForm.scss';
-import { useLocalStorage } from '@uidotdev/usehooks';
-import { useNavigate } from 'react-router-dom';
+import { Dispatch, useState } from "react";
+import "./LoginForm.scss";
+import { useLocalStorage } from "@uidotdev/usehooks";
+import { useNavigate } from "react-router-dom";
+import { UserDataInterface } from "../../types/userData";
 
 export default function LoginForm() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState<any>({
-    username: '',
-    password: '',
+    username: "",
+    password: "",
   });
-  const [userData, setUserData] = useLocalStorage<any>('userData', null);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [userData, setUserData]: [
+    UserDataInterface,
+    Dispatch<UserDataInterface>
+  ] = useLocalStorage<any>("userData", null);
+
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     // Add form validation
@@ -23,10 +28,10 @@ export default function LoginForm() {
     // TODO: Move submit/login function into a custom hook
     try {
       const response = await fetch(`https://ardb.cyclic.app/auth/login`, {
-        method: 'POST',
-        credentials: 'same-origin',
+        method: "POST",
+        credentials: "same-origin",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           username: formData.username,
@@ -37,14 +42,14 @@ export default function LoginForm() {
       if (!response.ok || response.status !== 200) {
         // Expand statusText's in backend
         // throw new Error(response.statusText);
-        throw new Error('Invalid username or password');
+        throw new Error("Invalid username or password");
       }
 
       const json = await response.json();
 
       // Valid login > save user data to local storage and navigate to dashboard
       setUserData({ username: json.username, authenticated: true });
-      navigate('/dashboard');
+      navigate("/dashboard");
     } catch (error) {
       if (error instanceof Error) {
         setErrorMessage(error.message);
@@ -54,42 +59,42 @@ export default function LoginForm() {
 
   return (
     <>
-      <form className='form-login' onSubmit={handleSubmit}>
-        <div className='form-group'>
-          <label className='form-label' htmlFor='username'>
+      <form className="form-login" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label className="form-label" htmlFor="username">
             Email Address
           </label>
           <input
-            className='form-input'
-            id='username'
-            type='text'
-            name='username'
-            placeholder='Enter Email Address'
+            className="form-input"
+            id="username"
+            type="text"
+            name="username"
+            placeholder="Enter Email Address"
             required
             value={formData.username}
             onChange={handleChange}
           />
         </div>
-        <div className='form-group'>
-          <label className='form-label' htmlFor='password'>
+        <div className="form-group">
+          <label className="form-label" htmlFor="password">
             Password
           </label>
           <input
-            className='form-input'
-            id='password'
-            type='password'
-            name='password'
-            placeholder='Enter Password'
+            className="form-input"
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Enter Password"
             required
             value={formData.password}
             onChange={handleChange}
           />
         </div>
-        <div className='form-group'>
-          <input className='form-submit' type='submit' value='Login' />
+        <div className="form-group">
+          <input className="form-submit" type="submit" value="Login" />
         </div>
       </form>
-      {errorMessage && <span className='alert-error'>{errorMessage}</span>}
+      {errorMessage && <span className="alert-error">{errorMessage}</span>}
     </>
   );
 }

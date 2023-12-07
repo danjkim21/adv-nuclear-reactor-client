@@ -1,72 +1,72 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-export default function useGetReactor(input) {
+export default function useGetReactor(input: string) {
   const [data, setData] = useState<ReactorInterface>({
-    _id: '',
-    name: '',
-    fullName: '',
-    nameWebsite: '',
-    designOrg: '',
-    designOrgWebsite: '',
-    coolant: '',
-    moderator: '',
-    designStatus: '',
-    country: '',
-    type: '',
-    purpose: '',
-    coreHeight: '',
-    equivCoreDiameter: '',
-    avgLinearHeatRate: '',
-    avgFuelPowerDensity: '',
-    avgCorePowerDensity: '',
-    outerCoreDiameterFuelRods: '',
-    rodArray: '',
-    latticeGeometry: '',
-    numOfFuelAssemblies: '',
-    neutronSpectrum: '',
-    thermalOutput: '',
-    outputGross: '',
-    outputNet: '',
-    efficiency: '',
-    thermodynamicCycle: '',
-    nonElecApplications: '',
-    fuelMaterial: '',
-    claddingMaterial: '',
-    reloadFuelEnrichment: '',
-    fuelCycleLength: '',
-    avgDischargeBurnup: '',
-    burnableAbsorber: '',
-    controlRodAbsorber: '',
-    solubleNeutronAbsorber: '',
-    steamFlowRate: '',
-    steamPressure: '',
-    steamTemp: '',
-    feedWaterFlowRate: '',
-    feedWaterTemp: '',
-    primaryCoolantFlowRate: '',
-    operatingPressure: '',
-    coolantInletTemp: '',
-    coolantOutletTemp: '',
-    deltaTemp: '',
-    innerDiameterCylindricalShell: '',
-    wallThicknessCylindricalShell: '',
-    baseMaterial: '',
-    totHeightInside: '',
-    transportWeight: '',
+    _id: "",
+    name: "",
+    fullName: "",
+    nameWebsite: "",
+    designOrg: "",
+    designOrgWebsite: "",
+    coolant: "",
+    moderator: "",
+    designStatus: "",
+    country: "",
+    type: "",
+    purpose: "",
+    coreHeight: "",
+    equivCoreDiameter: "",
+    avgLinearHeatRate: "",
+    avgFuelPowerDensity: "",
+    avgCorePowerDensity: "",
+    outerCoreDiameterFuelRods: "",
+    rodArray: "",
+    latticeGeometry: "",
+    numOfFuelAssemblies: "",
+    neutronSpectrum: "",
+    thermalOutput: "",
+    outputGross: "",
+    outputNet: "",
+    efficiency: "",
+    thermodynamicCycle: "",
+    nonElecApplications: "",
+    fuelMaterial: "",
+    claddingMaterial: "",
+    reloadFuelEnrichment: "",
+    fuelCycleLength: "",
+    avgDischargeBurnup: "",
+    burnableAbsorber: "",
+    controlRodAbsorber: "",
+    solubleNeutronAbsorber: "",
+    steamFlowRate: "",
+    steamPressure: "",
+    steamTemp: "",
+    feedWaterFlowRate: "",
+    feedWaterTemp: "",
+    primaryCoolantFlowRate: "",
+    operatingPressure: "",
+    coolantInletTemp: "",
+    coolantOutletTemp: "",
+    deltaTemp: "",
+    innerDiameterCylindricalShell: "",
+    wallThicknessCylindricalShell: "",
+    baseMaterial: "",
+    totHeightInside: "",
+    transportWeight: "",
   });
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     fetchData(input);
   }, [input]);
 
-  const fetchData = async (input) => {
+  const fetchData = async (input: string) => {
     try {
-      if (input !== '') {
+      if (input !== "") {
         setIsLoading(true);
         const response = await fetch(`https://ardb.cyclic.app/api/${input}`);
 
@@ -79,7 +79,7 @@ export default function useGetReactor(input) {
         setIsLoading(false);
         setIsActive(true);
       } else {
-        throw new Error('Please enter a reactor name');
+        throw new Error("Please enter a reactor name");
       }
     } catch (error) {
       setIsLoading(false);

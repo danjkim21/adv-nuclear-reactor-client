@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Dispatch, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
@@ -16,6 +16,7 @@ import { Avatar, ListItemIcon, Menu, MenuItem } from "@mui/material";
 import { AccountCircle, Logout } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "@uidotdev/usehooks";
+import { UserDataInterface } from "../../types/userData";
 
 const drawerWidth = 240;
 const navItems = ["Dashboard", "Users"];
@@ -26,7 +27,11 @@ export default function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-  const [userData, setUserData] = useLocalStorage<any>("userData", null);
+  const [userData, setUserData]: [
+    UserDataInterface,
+    Dispatch<UserDataInterface>
+  ] = useLocalStorage<any>("userData", null);
+
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
