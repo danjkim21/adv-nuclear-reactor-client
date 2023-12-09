@@ -16,7 +16,7 @@ import { Avatar, ListItemIcon, Menu, MenuItem } from '@mui/material';
 import { Logout } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useLocalStorage } from '@uidotdev/usehooks';
-import { UserDataInterface } from '../../types/userData';
+import { UserInterface } from '../../types/user';
 import useLogout from '../../hooks/useLogout';
 
 const drawerWidth = 240;
@@ -30,8 +30,8 @@ export default function NavBar() {
   const [errorMessage, setErrorMessage] = useState('');
 
   const [userData, setUserData]: [
-    UserDataInterface,
-    Dispatch<UserDataInterface | null>
+    UserInterface,
+    Dispatch<UserInterface | null>
   ] = useLocalStorage<any>('userData', null);
 
   const { error, isError, logout } = useLogout();

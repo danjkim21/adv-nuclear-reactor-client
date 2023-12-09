@@ -2,7 +2,7 @@ import { Dispatch, useState } from 'react';
 import './LoginForm.scss';
 import { useLocalStorage } from '@uidotdev/usehooks';
 import { useNavigate } from 'react-router-dom';
-import { UserDataInterface } from '../../types/userData';
+import { UserInterface } from '../../types/user';
 import useLogin from '../../hooks/useLogin';
 
 export default function LoginForm() {
@@ -12,10 +12,8 @@ export default function LoginForm() {
     password: '',
   });
   const [errorMessage, setErrorMessage] = useState('');
-  const [userData, setUserData]: [
-    UserDataInterface,
-    Dispatch<UserDataInterface>
-  ] = useLocalStorage<any>('userData', null);
+  const [userData, setUserData]: [UserInterface, Dispatch<UserInterface>] =
+    useLocalStorage<any>('userData', null);
 
   const { error, isError, login } = useLogin();
 
