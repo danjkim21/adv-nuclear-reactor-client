@@ -2,14 +2,12 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
 import { useLocalStorage } from '@uidotdev/usehooks';
-import { UserDataInterface } from '../../types/user';
+import { UserInterface } from '../../types/user';
 import { Dispatch } from 'react';
 
 function Header() {
-  const [userData, setUserData]: [
-    UserDataInterface,
-    Dispatch<UserDataInterface>
-  ] = useLocalStorage<any>('userData', null);
+  const [userData, setUserData]: [UserInterface, Dispatch<UserInterface>] =
+    useLocalStorage<any>('userData', null);
 
   return (
     <header className='section__header'>
