@@ -8,7 +8,6 @@ import {
 import {
   faBolt,
   faExternalLinkSquare,
-  faLink,
 } from '@fortawesome/free-solid-svg-icons';
 
 function Footer() {

@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:react/recommended',
     'plugin:@tanstack/eslint-plugin-query/recommended',
   ],
@@ -25,11 +26,13 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'react', '@tanstack/query'],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', '@tanstack/query'],
   rules: {
     '@tanstack/query/exhaustive-deps': 'error',
     '@tanstack/query/stable-query-client': 'error',
     'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-explicit-any': 'warn',
     'react/jsx-filename-extension': [
       1,
       { extensions: ['.js', '.ts', '.jsx', '.tsx'] },
