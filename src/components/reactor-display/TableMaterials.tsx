@@ -1,3 +1,5 @@
+import { ReactorInterface } from '../../types/reactors';
+
 interface TableMaterialsProps {
   reactorData: ReactorInterface;
 }

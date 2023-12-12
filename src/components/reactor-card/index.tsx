@@ -8,6 +8,7 @@ import {
   faLightbulb,
   faExternalLinkAlt,
 } from '@fortawesome/free-solid-svg-icons';
+import { ReactorInterface } from '../../types/reactors';
 
 interface ReactorCardProps {
   data: ReactorInterface[];
@@ -15,7 +16,7 @@ interface ReactorCardProps {
 }
 
 function ReactorCard({ data }: ReactorCardProps) {
-  let card = data
+  const card = data
     .sort((a, b) => a.name.localeCompare(b.name))
     .map((reactor) => {
       return (

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ReactorInterface } from '../types/reactors';
 
 export default function useGetAllReactors() {
   const [data, setData] = useState<ReactorInterface[]>([]);

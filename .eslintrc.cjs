@@ -29,5 +29,10 @@ module.exports = {
   rules: {
     '@tanstack/query/exhaustive-deps': 'error',
     '@tanstack/query/stable-query-client': 'error',
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': [
+      1,
+      { extensions: ['.js', '.ts', '.jsx', '.tsx'] },
+    ],
   },
 };

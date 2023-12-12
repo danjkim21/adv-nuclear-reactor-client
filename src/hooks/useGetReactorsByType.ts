@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import { ReactorInterface } from '../types/reactors';
 
 export default function useGetAllReactorsByType(type: string) {
   const [data, setData] = useState<ReactorInterface[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
   useEffect(() => {
     fetchData();
