@@ -20,8 +20,8 @@ import { UserInterface } from '../../types/user';
 import useLogout from '../../hooks/useLogout';
 
 const drawerWidth = 240;
-const navItems = ['Dashboard', 'Users'];
-const navItemsMobile = ['Dashboard', 'Users', 'Profile'];
+const navItems = ['dashboard', 'users'];
+const navItemsMobile = ['dashboard', 'users', 'profile'];
 
 export default function NavBar() {
   const navigate = useNavigate();
