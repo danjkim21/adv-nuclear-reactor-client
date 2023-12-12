@@ -9,6 +9,8 @@ export default function useGetAllReactorsByType(type: string) {
 
   useEffect(() => {
     fetchData();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [type]);
 
   const fetchData = async () => {
