@@ -17,11 +17,12 @@ import { Logout } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useLocalStorage } from '@uidotdev/usehooks';
 import { UserInterface } from '../../types/user';
-import useLogout from '../../hooks/useLogout';
+import { useMutation } from '@tanstack/react-query';
+import { logout } from '../../api/authApi';
 
 const drawerWidth = 240;
-const navItems = ['Dashboard', 'Users'];
-const navItemsMobile = ['Dashboard', 'Users', 'Profile'];
+const navItems = ['dashboard', 'users'];
+const navItemsMobile = ['dashboard', 'users', 'profile'];
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -34,7 +35,13 @@ export default function NavBar() {
     Dispatch<UserInterface | null>
   ] = useLocalStorage<any>('userData', null);
 
-  const { error, isError, logout } = useLogout();
+  const {
+    mutate: logoutMutate,
+    isError,
+    error,
+  } = useMutation({
+    mutationFn: logout,
+  });
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -53,10 +60,10 @@ export default function NavBar() {
   const handleLogOut = async (e: React.MouseEvent) => {
     e.preventDefault();
 
-    logout();
+    logoutMutate();
 
     if (isError) {
-      setErrorMessage(error);
+      setErrorMessage(JSON.stringify(error));
       return; // Exit function early if error occurs
     }
 

@@ -1,4 +1,4 @@
-interface ReactorInterface {
+export interface ReactorInterface {
   _id: string;
   name: string;
   fullName: string;

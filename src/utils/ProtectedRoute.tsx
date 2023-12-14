@@ -2,7 +2,7 @@ import { useLocalStorage } from '@uidotdev/usehooks';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ProtectedRoute = (props) => {
+const ProtectedRoute = (props: React.PropsWithChildren) => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useLocalStorage<any>('userData', null);
@@ -17,6 +17,8 @@ const ProtectedRoute = (props) => {
 
   useEffect(() => {
     checkUserToken();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn]);
 
   return <>{isLoggedIn ? props.children : null}</>;
