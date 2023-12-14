@@ -11,7 +11,7 @@ interface SearchProps {
 function Search({ handleInputSelection, handleSearchReactor }: SearchProps) {
   // Fetch list of all reactors for search input dropdown
   const { data: reactorQuery, isLoading } = useQuery({
-    queryKey: ['reactor'],
+    queryKey: ['reactors'],
     queryFn: getReactors,
   });
 

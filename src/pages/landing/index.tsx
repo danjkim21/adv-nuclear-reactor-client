@@ -6,7 +6,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
-import useGetReactor from '../../hooks/useGetReactor';
+import { useQuery } from '@tanstack/react-query';
+import { getReactorById } from '../../api/reactorsApi';
 
 function Landing() {
   // Search for reactor via form submit
@@ -22,7 +23,10 @@ function Landing() {
     setInput(selection);
   };
 
-  const { data: reactorData, isActive } = useGetReactor(input);
+  const { data: reactorData, isSuccess } = useQuery({
+    queryKey: ['reactors', input],
+    queryFn: () => getReactorById(input),
+  });
 
   return (
     <>
@@ -46,7 +50,7 @@ function Landing() {
         </div>
 
         {/* If reactor as been search in form, display prompt letting user know to scroll to see results */}
-        {isActive && (
+        {isSuccess && (
           <>
             <div className='container__actionIcon'>
               <a className='link__actionIcon' href='#displayResultArea'>
@@ -60,7 +64,9 @@ function Landing() {
       </main>
 
       {/* Displays reactor data results */}
-      {isActive && <ReactorDisplay reactorData={reactorData} />}
+      {isSuccess && reactorData !== undefined && (
+        <ReactorDisplay reactorData={reactorData} />
+      )}
     </>
   );
 }
