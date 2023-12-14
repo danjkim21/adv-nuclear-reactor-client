@@ -3,11 +3,12 @@ import './LoginForm.scss';
 import { useLocalStorage } from '@uidotdev/usehooks';
 import { useNavigate } from 'react-router-dom';
 import { UserInterface } from '../../types/user';
-import useLogin from '../../hooks/useLogin';
+import { useMutation } from '@tanstack/react-query';
+import { login } from '../../api/authApi';
 
 export default function LoginForm() {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState<any>({
+  const [formData, setFormData] = useState<Record<string, string>>({
     username: '',
     password: '',
   });
@@ -15,20 +16,26 @@ export default function LoginForm() {
   const [userData, setUserData]: [UserInterface, Dispatch<UserInterface>] =
     useLocalStorage<any>('userData', null);
 
-  const { error, isError, login } = useLogin();
+  const {
+    mutate: loginMutate,
+    isError,
+    error,
+  } = useMutation({
+    mutationFn: login,
+  });
 
   const handleChange = (e) => {
-    // Add form validation
+    // TODO: Add form validation
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    login(formData.username, formData.password);
+    loginMutate({ username: formData.username, password: formData.password });
 
     if (isError) {
-      setErrorMessage(error);
+      setErrorMessage(JSON.stringify(error));
       return; // Exit function early if error occurs
     }
 
