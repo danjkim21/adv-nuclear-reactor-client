@@ -1,35 +1,38 @@
 import Select from 'react-select';
-import { ReactorInterface } from '../../../../types/reactors';
+import { useQuery } from '@tanstack/react-query';
+import { getReactors } from '../../../../api/reactorsApi';
+import { useMemo } from 'react';
 
 interface SearchProps {
-  data: ReactorInterface[];
-  handleInputSelection(selectOption: any): void; // Fix type for selectOption
-  handleSearchReactor(e: any): void;
-  isLoading: boolean;
+  handleInputSelection(selectOption): void; // Add type for selectOption
+  handleSearchReactor(e: React.FormEvent<HTMLFormElement>): void;
 }
 
-function Search({
-  data,
-  handleInputSelection,
-  handleSearchReactor,
-  isLoading,
-}: SearchProps) {
-  const selectOptions = data
-    .sort((a, b) => a.name.localeCompare(b.name))
-    .map((reactor) => {
-      const reactorFullName =
-        reactor.name !== reactor.fullName ? `(${reactor.fullName})` : '';
-      const reactorLabel = `${reactor.name} ${reactorFullName}`;
+function Search({ handleInputSelection, handleSearchReactor }: SearchProps) {
+  // Fetch list of all reactors for search input dropdown
+  const { data: reactorQuery, isLoading } = useQuery({
+    queryKey: ['reactor'],
+    queryFn: getReactors,
+  });
 
-      return {
-        value: reactor.name,
-        label: reactorLabel,
-      };
-    });
+  const selectOptions = useMemo(() => {
+    return reactorQuery
+      ?.sort((a, b) => a.name.localeCompare(b.name))
+      .map((reactor) => {
+        const reactorFullName =
+          reactor.name !== reactor.fullName ? `(${reactor.fullName})` : '';
+        const reactorLabel = `${reactor.name} ${reactorFullName}`;
+
+        return {
+          value: reactor.name,
+          label: reactorLabel,
+        };
+      });
+  }, [reactorQuery]);
 
   //  TODO: Update Select Styling to match arDB theme
   const customStyles = {
-    option: (defaultStyles, state) => ({
+    option: (defaultStyles) => ({
       ...defaultStyles,
     }),
 
@@ -54,7 +57,6 @@ function Search({
             isLoading ? 'Fetching reactor data' : 'Input reactor name'
           }
           isLoading={isLoading}
-          // isClearable={true}
           isSearchable={true}
           options={selectOptions}
           onChange={handleInputSelection}

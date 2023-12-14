@@ -1,27 +1,23 @@
-import Title from "./components/title";
-import Search from "./components/search";
-import Desc from "./components/desc";
-import ReactorDisplay from "../../components/reactor-display";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import useGetAllReactors from "../../hooks/useGetAllReactors";
-import useGetReactor from "../../hooks/useGetReactor";
+import Title from './components/title';
+import Search from './components/search';
+import Desc from './components/desc';
+import ReactorDisplay from '../../components/reactor-display';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import useGetReactor from '../../hooks/useGetReactor';
 
 function Landing() {
-  // Fetch list of all reactors for search input dropdown
-  const { data, isLoading } = useGetAllReactors();
-
   // Search for reactor via form submit
-  const [selection, setSelection] = useState<string>("");
-  const [input, setInput] = useState<string>("");
+  const [selection, setSelection] = useState<string>('');
+  const [input, setInput] = useState<string>('');
 
   const onInputSelection = (selectOption) => {
     setSelection(selectOption.value);
   };
 
-  const onSearchReactor = (e) => {
+  const onSearchReactor = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setInput(selection);
   };
@@ -30,23 +26,21 @@ function Landing() {
 
   return (
     <>
-      <main className="section__main">
-        <Title appTitle="arDB" />
-        <Desc appDesc="Explore, Research, Support - Advanced reactor resources and data aggregated for policy professionals, reactor developers, tech enthusiasts. An open source project dedicated to cataloging advanced nuclear reactor technologies. " />
+      <main className='section__main'>
+        <Title appTitle='arDB' />
+        <Desc appDesc='Explore, Research, Support - Advanced reactor resources and data aggregated for policy professionals, reactor developers, tech enthusiasts. An open source project dedicated to cataloging advanced nuclear reactor technologies. ' />
         {/* Form component - searches reactor API for reactor */}
         <Search
-          data={data}
           handleInputSelection={onInputSelection}
           handleSearchReactor={onSearchReactor}
-          isLoading={isLoading}
         />
 
-        <div className="container container__appDivider">
-          <span className="appDivider__text">or</span>
+        <div className='container container__appDivider'>
+          <span className='appDivider__text'>or</span>
         </div>
 
-        <div className="container container__appButtons">
-          <Link className="btn_secondary" to="/reactors">
+        <div className='container container__appButtons'>
+          <Link className='btn_secondary' to='/reactors'>
             Browse All
           </Link>
         </div>
@@ -54,10 +48,10 @@ function Landing() {
         {/* If reactor as been search in form, display prompt letting user know to scroll to see results */}
         {isActive && (
           <>
-            <div className="container__actionIcon">
-              <a className="link__actionIcon" href="#displayResultArea">
-                <span className="button__actionIcon">
-                  <FontAwesomeIcon className="actionIcon" icon={faArrowDown} />
+            <div className='container__actionIcon'>
+              <a className='link__actionIcon' href='#displayResultArea'>
+                <span className='button__actionIcon'>
+                  <FontAwesomeIcon className='actionIcon' icon={faArrowDown} />
                 </span>
               </a>
             </div>
