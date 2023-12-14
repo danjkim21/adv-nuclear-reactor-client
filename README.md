@@ -43,6 +43,7 @@ This project is the second iteration of the arDB ([Version One Link](https://git
 
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [TanStack Query](https://tanstack.com/query/latest)
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
 - [Puppeteer](https://github.com/puppeteer/puppeteer)
