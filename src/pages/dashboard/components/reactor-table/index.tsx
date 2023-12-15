@@ -1,4 +1,4 @@
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridRowSelectionModel } from '@mui/x-data-grid';
 import { CircularProgress } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import { getReactors } from '../../../../api/reactorsApi';
@@ -36,7 +36,15 @@ const columns: GridColDef[] = [
   },
 ];
 
-export default function ReactorTable() {
+interface ReactorTablePropsInterface {
+  rowSelectionModel: GridRowSelectionModel;
+  handleSelectRow: (newRowSelectionModel: GridRowSelectionModel) => void;
+}
+
+export default function ReactorTable({
+  rowSelectionModel,
+  handleSelectRow,
+}: ReactorTablePropsInterface) {
   const {
     data: reactorsData,
     isLoading,
@@ -56,6 +64,8 @@ export default function ReactorTable() {
           })}
           columns={columns}
           // checkboxSelection
+          onRowSelectionModelChange={handleSelectRow}
+          rowSelectionModel={rowSelectionModel}
         />
       )}
     </div>
