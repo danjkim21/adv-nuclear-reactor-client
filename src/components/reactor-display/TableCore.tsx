@@ -1,4 +1,4 @@
-import { ReactorInterface } from '../../types/reactors';
+import { ReactorInterface } from "../../types/reactors";
 
 interface TableCoreProps {
   reactorData: ReactorInterface;
@@ -7,9 +7,9 @@ interface TableCoreProps {
 function TableCore({ reactorData }: TableCoreProps) {
   return (
     <>
-      <div className='container container__table'>
-        <h3 className='container__title'>Reactor Core</h3>
-        <table className='table table__reactor'>
+      <div className="container container__table">
+        <h3 className="container__title">Reactor Core</h3>
+        <table className="table table__reactor">
           <tbody>
             <tr>
               <td>Active Core Height</td>

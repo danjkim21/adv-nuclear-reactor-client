@@ -14,13 +14,13 @@ function CategoryList({ categories, setTypeInput }: CategoryListProps) {
 
   const category = categoriesSortedAlpha.map((type) => {
     return (
-      <li className='categoryList__item' key={type} onClick={filterDataByType}>
+      <li className="categoryList__item" key={type} onClick={filterDataByType}>
         {type}
       </li>
     );
   });
 
-  return <ul className='categoryList'>{category}</ul>;
+  return <ul className="categoryList">{category}</ul>;
 }
 
 export default CategoryList;

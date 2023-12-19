@@ -1,4 +1,4 @@
-import { ReactorInterface } from '../../types/reactors';
+import { ReactorInterface } from "../../types/reactors";
 
 interface TableMaterialsProps {
   reactorData: ReactorInterface;
@@ -7,9 +7,9 @@ interface TableMaterialsProps {
 function TableMaterials({ reactorData }: TableMaterialsProps) {
   return (
     <>
-      <div className='container container__table'>
-        <h3 className='container__title'>Core Materials</h3>
-        <table className='table table__reactor'>
+      <div className="container container__table">
+        <h3 className="container__title">Core Materials</h3>
+        <table className="table table__reactor">
           <tbody>
             <tr>
               <td>Fuel Material</td>

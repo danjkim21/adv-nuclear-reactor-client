@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactorModal from '../reactor-modal';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import ReactorModal from "../reactor-modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFireFlameSimple,
   faAtom,
   faGlobe,
   faLightbulb,
   faExternalLinkAlt,
-} from '@fortawesome/free-solid-svg-icons';
-import { ReactorInterface } from '../../types/reactors';
+} from "@fortawesome/free-solid-svg-icons";
+import { ReactorInterface } from "../../types/reactors";
 
 interface ReactorCardProps {
   data: ReactorInterface[];
@@ -22,37 +22,37 @@ function ReactorCard({ data }: ReactorCardProps) {
       return (
         <React.Fragment key={reactor._id}>
           {/* Reactor Card Main */}
-          <div className='card--light card__reactorData card__reactorData--all'>
-            <a className='link__modal' href={`#${reactor.name}`}>
-              <h3 className='card__title'>{reactor.name}</h3>
+          <div className="card--light card__reactorData card__reactorData--all">
+            <a className="link__modal" href={`#${reactor.name}`}>
+              <h3 className="card__title">{reactor.name}</h3>
             </a>
-            <p className='card__subtitle'>{reactor.fullName}</p>
-            <div className='card__reactorProperties'>
-              <span className='card__reactorProp'>
-                <FontAwesomeIcon className='card__icon' icon={faGlobe} />{' '}
+            <p className="card__subtitle">{reactor.fullName}</p>
+            <div className="card__reactorProperties">
+              <span className="card__reactorProp">
+                <FontAwesomeIcon className="card__icon" icon={faGlobe} />{" "}
                 {reactor.designOrg}
               </span>
-              <span className='card__reactorProp'>
-                <FontAwesomeIcon className='card__icon' icon={faAtom} />{' '}
+              <span className="card__reactorProp">
+                <FontAwesomeIcon className="card__icon" icon={faAtom} />{" "}
                 {reactor.type} ({reactor.coolant})
               </span>
-              <span className='card__reactorProp'>
-                <FontAwesomeIcon className='card__icon' icon={faLightbulb} />{' '}
+              <span className="card__reactorProp">
+                <FontAwesomeIcon className="card__icon" icon={faLightbulb} />{" "}
                 {reactor.outputGross} MWe (gross)
               </span>
-              <span className='card__reactorProp'>
+              <span className="card__reactorProp">
                 <FontAwesomeIcon
-                  className='card__icon'
+                  className="card__icon"
                   icon={faFireFlameSimple}
-                />{' '}
+                />{" "}
                 {reactor.thermalOutput} MWth
               </span>
             </div>
             <a
-              className='link__modal link__modal--button'
+              className="link__modal link__modal--button"
               href={`#${reactor.name}`}
             >
-              <FontAwesomeIcon className='' icon={faExternalLinkAlt} />
+              <FontAwesomeIcon className="" icon={faExternalLinkAlt} />
             </a>
           </div>
 
@@ -63,7 +63,7 @@ function ReactorCard({ data }: ReactorCardProps) {
     });
 
   return (
-    <div className='container container__cards container__cards--all'>
+    <div className="container container__cards container__cards--all">
       {card}
     </div>
   );

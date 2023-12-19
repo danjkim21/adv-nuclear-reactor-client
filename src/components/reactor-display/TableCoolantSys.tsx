@@ -1,4 +1,4 @@
-import { ReactorInterface } from '../../types/reactors';
+import { ReactorInterface } from "../../types/reactors";
 
 interface TableCoolantSysProps {
   reactorData: ReactorInterface;
@@ -7,9 +7,9 @@ interface TableCoolantSysProps {
 function TableCoolantSys({ reactorData }: TableCoolantSysProps) {
   return (
     <>
-      <div className='container container__table'>
-        <h3 className='container__title'>Coolant System</h3>
-        <table className='table table__reactor'>
+      <div className="container container__table">
+        <h3 className="container__title">Coolant System</h3>
+        <table className="table table__reactor">
           <tbody>
             <tr>
               <td>Coolant</td>

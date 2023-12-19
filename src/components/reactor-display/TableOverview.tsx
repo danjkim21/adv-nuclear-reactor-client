@@ -1,4 +1,4 @@
-import { ReactorInterface } from '../../types/reactors';
+import { ReactorInterface } from "../../types/reactors";
 
 interface TableOverviewProps {
   reactorData: ReactorInterface;
@@ -7,9 +7,9 @@ interface TableOverviewProps {
 function TableOverview({ reactorData }: TableOverviewProps) {
   return (
     <>
-      <div className='container container__table'>
-        <h3 className='container__title'>Overview</h3>
-        <table className='table table__reactor'>
+      <div className="container container__table">
+        <h3 className="container__title">Overview</h3>
+        <table className="table table__reactor">
           <tbody>
             <tr>
               <td>Vendor</td>
