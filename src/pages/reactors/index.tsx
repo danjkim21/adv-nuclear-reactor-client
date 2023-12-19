@@ -1,38 +1,38 @@
-import { useState } from 'react';
-import CategoryList from '../../components/category-list';
-import ReactorCard from '../../components/reactor-card';
-import Footer from '../../components/footer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-import { reactorTypeDefinitions } from '../../data/reactorTypeDefinitions';
-import { useQuery } from '@tanstack/react-query';
-import { getReactorByType, getReactorTypes } from '../../api/reactorsApi';
+import { useState } from "react";
+import CategoryList from "../../components/category-list";
+import ReactorCard from "../../components/reactor-card";
+import Footer from "../../components/footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { reactorTypeDefinitions } from "../../data/reactorTypeDefinitions";
+import { useQuery } from "@tanstack/react-query";
+import { getReactorByType, getReactorTypes } from "../../api/reactorsApi";
 
 function Reactors() {
-  const [typeInput, setTypeInput] = useState('ALL');
+  const [typeInput, setTypeInput] = useState("ALL");
   const reactorTypeInfo = reactorTypeDefinitions[typeInput];
 
   // Fetch Reactor categories for side bar filtering
   const { data: reactorTypes, isLoading: isLoadingTypes } = useQuery({
-    queryKey: ['reactors', 'types'],
+    queryKey: ["reactors", "types"],
     queryFn: getReactorTypes,
   });
 
   // Fetch Reactors by reactor type (category)
   const { data: filteredReactors, isLoading: isLoadingFiltered } = useQuery({
-    queryKey: ['reactors', typeInput],
+    queryKey: ["reactors", typeInput],
     enabled: reactorTypes !== undefined, // when reactorTypes is undefined, query will not run.
     queryFn: () => getReactorByType(typeInput),
   });
 
   return (
-    <section className='section__reactors'>
-      <div className='container container__reactors'>
-        <div className='container container__header'>
-          <h1 className='page__header'>
+    <section className="section__reactors">
+      <div className="container container__reactors">
+        <div className="container container__header">
+          <h1 className="page__header">
             Open Source Data for Professionals and Developers
           </h1>
-          <p className='page__contentDescrip'>
+          <p className="page__contentDescrip">
             You are exploring all available scraped datasets from all
             categories. Available data includes reactor information related to
             design specifications, reactor core, coolant system, core materials,
@@ -41,11 +41,11 @@ function Reactors() {
           </p>
         </div>
       </div>
-      <div className='container container__flex'>
+      <div className="container container__flex">
         {/* sidebar containing filtering for reactors */}
-        <div className='col col--side'>
-          <div className='container__sidebar'>
-            <h2 className='sidebar__title'>Categories</h2>
+        <div className="col col--side">
+          <div className="container__sidebar">
+            <h2 className="sidebar__title">Categories</h2>
             {isLoadingTypes && <FontAwesomeIcon icon={faSpinner} spinPulse />}
             {!isLoadingTypes && reactorTypes !== undefined && (
               <CategoryList
@@ -57,8 +57,8 @@ function Reactors() {
           </div>
         </div>
         {/* Displays all reactors in cards */}
-        <div className='col col--main'>
-          <div className='container__scrollMain'>
+        <div className="col col--main">
+          <div className="container__scrollMain">
             <h2>{reactorTypeInfo?.title && reactorTypeInfo.title}</h2>
             <p>{reactorTypeInfo?.desc && reactorTypeInfo.desc}</p>
             {isLoadingFiltered && (

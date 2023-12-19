@@ -1,4 +1,4 @@
-@use '../../styles/variables.scss';
+@use "../../styles/variables.scss";
 
 .form-login {
   .form-group {
@@ -8,7 +8,8 @@
     gap: 0.25rem;
     margin-bottom: 1.5rem;
 
-    .form-input, .form-submit {
+    .form-input,
+    .form-submit {
       width: 100%;
     }
 
@@ -35,7 +36,7 @@
         cursor: pointer;
       }
     }
-  }  
+  }
 }
 
 .alert-error {

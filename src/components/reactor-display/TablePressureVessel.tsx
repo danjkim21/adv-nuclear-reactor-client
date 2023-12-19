@@ -1,4 +1,4 @@
-import { ReactorInterface } from '../../types/reactors';
+import { ReactorInterface } from "../../types/reactors";
 
 interface TablePressureVesselProps {
   reactorData: ReactorInterface;
@@ -7,9 +7,9 @@ interface TablePressureVesselProps {
 function TablePressureVessel({ reactorData }: TablePressureVesselProps) {
   return (
     <>
-      <div className='container container__table'>
-        <h3 className='container__title'>Pressure Vessel</h3>
-        <table className='table table__reactor'>
+      <div className="container container__table">
+        <h3 className="container__title">Pressure Vessel</h3>
+        <table className="table table__reactor">
           <tbody>
             <tr>
               <td>Inner Diameter of Cylindrical Shell</td>

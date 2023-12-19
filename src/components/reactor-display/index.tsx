@@ -1,10 +1,10 @@
-import OverviewCards from './OverviewCards';
-import TableOverview from './TableOverview';
-import TableCoolantSys from './TableCoolantSys';
-import TableCore from './TableCore';
-import TableMaterials from './TableMaterials';
-import TablePressureVessel from './TablePressureVessel';
-import { ReactorInterface } from '../../types/reactors';
+import OverviewCards from "./OverviewCards";
+import TableOverview from "./TableOverview";
+import TableCoolantSys from "./TableCoolantSys";
+import TableCore from "./TableCore";
+import TableMaterials from "./TableMaterials";
+import TablePressureVessel from "./TablePressureVessel";
+import { ReactorInterface } from "../../types/reactors";
 
 interface ReactorDisplayProps {
   reactorData: ReactorInterface;
@@ -12,17 +12,17 @@ interface ReactorDisplayProps {
 
 function ReactorDisplay({ reactorData }: ReactorDisplayProps) {
   return (
-    <section id='displayResultArea' className='section__displayArea'>
-      <div className='container container__reactorTitle'>
-        <h2 className='title__reactorName'>{reactorData.name} </h2>
-        <p className='subtitle__reactorFullName'>
+    <section id="displayResultArea" className="section__displayArea">
+      <div className="container container__reactorTitle">
+        <h2 className="title__reactorName">{reactorData.name} </h2>
+        <p className="subtitle__reactorFullName">
           <a
-            className='subtitle__link'
+            className="subtitle__link"
             href={`https://aris.iaea.org/PDF/${
-              reactorData.nameWebsite.split('\\')[2]
+              reactorData.nameWebsite.split("\\")[2]
             }`}
-            target='_blank'
-            rel='noreferrer'
+            target="_blank"
+            rel="noreferrer"
           >
             {reactorData.fullName}
           </a>
@@ -32,7 +32,7 @@ function ReactorDisplay({ reactorData }: ReactorDisplayProps) {
       <OverviewCards reactorData={reactorData} />
 
       {/* Table Data Extended */}
-      <div className='container container__tables'>
+      <div className="container container__tables">
         <TableOverview reactorData={reactorData} />
         <TableCoolantSys reactorData={reactorData} />
         <TableCore reactorData={reactorData} />

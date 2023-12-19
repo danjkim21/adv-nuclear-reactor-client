@@ -1,6 +1,6 @@
-import { ReactorInterface } from '../types/reactors';
+import { ReactorInterface } from "../types/reactors";
 
-const API_URL = 'https://ardb.cyclic.app/api/';
+const API_URL = "https://ardb.cyclic.app/api/";
 
 export const getReactors = async (): Promise<ReactorInterface[]> => {
   const response = await fetch(`${API_URL}`);
@@ -14,8 +14,8 @@ export const getReactors = async (): Promise<ReactorInterface[]> => {
 };
 
 export const getReactorById = async (id: string): Promise<ReactorInterface> => {
-  if (id === '') {
-    throw new Error('Please enter a reactor name');
+  if (id === "") {
+    throw new Error("Please enter a reactor name");
   }
   const response = await fetch(`${API_URL}${id}`);
   const data: ReactorInterface = await response.json();
@@ -28,7 +28,7 @@ export const getReactorById = async (id: string): Promise<ReactorInterface> => {
 };
 
 export const getReactorByType = async (
-  type: string
+  type: string,
 ): Promise<ReactorInterface[]> => {
   const response = await fetch(`${API_URL}categories/${type}`);
   const data: ReactorInterface[] = await response.json();
