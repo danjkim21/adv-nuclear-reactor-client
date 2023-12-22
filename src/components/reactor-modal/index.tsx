@@ -1,4 +1,4 @@
-import { ReactorInterface } from "../../types/reactors";
+import { ReactorInterface } from '../../types/reactors';
 
 interface ReactorModalProps {
   reactor: ReactorInterface;

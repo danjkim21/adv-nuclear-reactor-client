@@ -1,4 +1,4 @@
-@use "./variables";
+@use './variables';
 
 /************* General Styling *************/
 html {
@@ -34,7 +34,7 @@ html {
 }
 .appDivider__text::before,
 .appDivider__text::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   width: 800%;
@@ -170,7 +170,7 @@ html {
   /* background-size: contain; */
   background-color: variables.$purple__light;
   background-color: #dcdbe5c7;
-  background-image: url("../assets/bg-shapes.svg");
+  background-image: url('../assets/bg-shapes.svg');
 }
 
 .header__appTitle {

@@ -1,14 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./styles/index.scss";
-import "./styles/normalize.scss";
-import { BrowserRouter as Router } from "react-router-dom";
-import { ThemeProvider } from "@mui/material";
-import { theme } from "./styles/theme";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './styles/index.scss';
+import './styles/normalize.scss';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { ThemeProvider } from '@mui/material';
+import { theme } from './styles/theme';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement as HTMLElement);
 
 const queryClient = new QueryClient();
@@ -22,5 +22,5 @@ root.render(
         </Router>
       </ThemeProvider>
     </QueryClientProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

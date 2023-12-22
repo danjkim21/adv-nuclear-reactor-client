@@ -1,10 +1,10 @@
-import OverviewCards from "./OverviewCards";
-import TableOverview from "./TableOverview";
-import TableCoolantSys from "./TableCoolantSys";
-import TableCore from "./TableCore";
-import TableMaterials from "./TableMaterials";
-import TablePressureVessel from "./TablePressureVessel";
-import { ReactorInterface } from "../../types/reactors";
+import OverviewCards from './OverviewCards';
+import TableOverview from './TableOverview';
+import TableCoolantSys from './TableCoolantSys';
+import TableCore from './TableCore';
+import TableMaterials from './TableMaterials';
+import TablePressureVessel from './TablePressureVessel';
+import { ReactorInterface } from '../../types/reactors';
 
 interface ReactorDisplayProps {
   reactorData: ReactorInterface;
@@ -19,7 +19,7 @@ function ReactorDisplay({ reactorData }: ReactorDisplayProps) {
           <a
             className="subtitle__link"
             href={`https://aris.iaea.org/PDF/${
-              reactorData.nameWebsite.split("\\")[2]
+              reactorData.nameWebsite.split('\\')[2]
             }`}
             target="_blank"
             rel="noreferrer"

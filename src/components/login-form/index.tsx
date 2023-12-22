@@ -1,20 +1,20 @@
-import { Dispatch, useState } from "react";
-import "./LoginForm.scss";
-import { useLocalStorage } from "@uidotdev/usehooks";
-import { useNavigate } from "react-router-dom";
-import { UserInterface } from "../../types/user";
-import { useMutation } from "@tanstack/react-query";
-import { login } from "../../api/authApi";
+import { Dispatch, useState } from 'react';
+import './LoginForm.scss';
+import { useLocalStorage } from '@uidotdev/usehooks';
+import { useNavigate } from 'react-router-dom';
+import { UserInterface } from '../../types/user';
+import { useMutation } from '@tanstack/react-query';
+import { login } from '../../api/authApi';
 
 export default function LoginForm() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState<Record<string, string>>({
-    username: "",
-    password: "",
+    username: '',
+    password: '',
   });
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState('');
   const [userData, setUserData]: [UserInterface, Dispatch<UserInterface>] =
-    useLocalStorage<any>("userData", null);
+    useLocalStorage<any>('userData', null);
 
   const {
     mutate: loginMutate,
@@ -40,7 +40,7 @@ export default function LoginForm() {
     }
 
     setUserData({ username: formData.username, authenticated: true });
-    navigate("/dashboard");
+    navigate('/dashboard');
   };
 
   return (

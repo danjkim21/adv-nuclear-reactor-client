@@ -1,16 +1,16 @@
-import { useLocalStorage } from "@uidotdev/usehooks";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocalStorage } from '@uidotdev/usehooks';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProtectedRoute = (props: React.PropsWithChildren) => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userData, setUserData] = useLocalStorage<any>("userData", null);
+  const [userData, setUserData] = useLocalStorage<any>('userData', null);
 
   const checkUserToken = () => {
-    if (!userData || userData.authenticated === "undefined") {
+    if (!userData || userData.authenticated === 'undefined') {
       setIsLoggedIn(false);
-      return navigate("/login");
+      return navigate('/login');
     }
     setIsLoggedIn(true);
   };

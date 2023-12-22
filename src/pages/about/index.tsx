@@ -1,4 +1,4 @@
-import Footer from "../../components/footer";
+import Footer from '../../components/footer';
 
 function About() {
   return (
@@ -19,9 +19,9 @@ function About() {
         <p>Yes</p>
         <h3>Is it open source?</h3>
         <p>
-          Of course! Source code for the API is maintained by{" "}
+          Of course! Source code for the API is maintained by{' '}
           <a href="https://github.com/danjkim21">Daniel Jay-Young Kim</a> can be
-          found in its GitHub repo:{" "}
+          found in its GitHub repo:{' '}
           <a href="https://github.com/danjkim21/adv-nuclear-reactor-api-v2">
             https://github.com/danjkim21/adv-nuclear-reactor-api-v2
           </a>

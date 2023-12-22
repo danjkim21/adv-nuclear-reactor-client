@@ -1,5 +1,5 @@
-import Footer from "../../components/footer";
-import LoginForm from "../../components/login-form";
+import Footer from '../../components/footer';
+import LoginForm from '../../components/login-form';
 
 function Login() {
   return (

@@ -1,14 +1,14 @@
-import React from "react";
-import ReactorModal from "../reactor-modal";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import ReactorModal from '../reactor-modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFireFlameSimple,
   faAtom,
   faGlobe,
   faLightbulb,
   faExternalLinkAlt,
-} from "@fortawesome/free-solid-svg-icons";
-import { ReactorInterface } from "../../types/reactors";
+} from '@fortawesome/free-solid-svg-icons';
+import { ReactorInterface } from '../../types/reactors';
 
 interface ReactorCardProps {
   data: ReactorInterface[];
@@ -29,22 +29,22 @@ function ReactorCard({ data }: ReactorCardProps) {
             <p className="card__subtitle">{reactor.fullName}</p>
             <div className="card__reactorProperties">
               <span className="card__reactorProp">
-                <FontAwesomeIcon className="card__icon" icon={faGlobe} />{" "}
+                <FontAwesomeIcon className="card__icon" icon={faGlobe} />{' '}
                 {reactor.designOrg}
               </span>
               <span className="card__reactorProp">
-                <FontAwesomeIcon className="card__icon" icon={faAtom} />{" "}
+                <FontAwesomeIcon className="card__icon" icon={faAtom} />{' '}
                 {reactor.type} ({reactor.coolant})
               </span>
               <span className="card__reactorProp">
-                <FontAwesomeIcon className="card__icon" icon={faLightbulb} />{" "}
+                <FontAwesomeIcon className="card__icon" icon={faLightbulb} />{' '}
                 {reactor.outputGross} MWe (gross)
               </span>
               <span className="card__reactorProp">
                 <FontAwesomeIcon
                   className="card__icon"
                   icon={faFireFlameSimple}
-                />{" "}
+                />{' '}
                 {reactor.thermalOutput} MWth
               </span>
             </div>

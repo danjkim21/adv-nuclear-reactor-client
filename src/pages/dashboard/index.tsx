@@ -1,6 +1,6 @@
-import { Box } from "@mui/material";
-import NavBar from "../../components/nav-bar";
-import ReactorTable from "./components/reactor-table";
+import { Box } from '@mui/material';
+import NavBar from '../../components/nav-bar';
+import ReactorTable from './components/reactor-table';
 
 export default function Dashboard() {
   return (

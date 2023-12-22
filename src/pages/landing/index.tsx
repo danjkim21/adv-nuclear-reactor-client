@@ -1,18 +1,18 @@
-import Title from "./components/title";
-import Search from "./components/search";
-import Desc from "./components/desc";
-import ReactorDisplay from "../../components/reactor-display";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import { useQuery } from "@tanstack/react-query";
-import { getReactorById } from "../../api/reactorsApi";
+import Title from './components/title';
+import Search from './components/search';
+import Desc from './components/desc';
+import ReactorDisplay from '../../components/reactor-display';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { useQuery } from '@tanstack/react-query';
+import { getReactorById } from '../../api/reactorsApi';
 
 function Landing() {
   // Search for reactor via form submit
-  const [selection, setSelection] = useState<string>("");
-  const [input, setInput] = useState<string>("");
+  const [selection, setSelection] = useState<string>('');
+  const [input, setInput] = useState<string>('');
 
   const onInputSelection = (selectOption) => {
     setSelection(selectOption.value);
@@ -24,7 +24,7 @@ function Landing() {
   };
 
   const { data: reactorData, isSuccess } = useQuery({
-    queryKey: ["reactors", input],
+    queryKey: ['reactors', input],
     queryFn: () => getReactorById(input),
   });
 

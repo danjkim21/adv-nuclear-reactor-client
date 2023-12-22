@@ -1,11 +1,11 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFireFlameSimple,
   faAtom,
   faGlobe,
   faLightbulb,
-} from "@fortawesome/free-solid-svg-icons";
-import { ReactorInterface } from "../../types/reactors";
+} from '@fortawesome/free-solid-svg-icons';
+import { ReactorInterface } from '../../types/reactors';
 
 interface ReactorDisplayProps {
   reactorData: ReactorInterface;

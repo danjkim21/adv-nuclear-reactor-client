@@ -1,26 +1,26 @@
-import { useState } from "react";
-import CategoryList from "../../components/category-list";
-import ReactorCard from "../../components/reactor-card";
-import Footer from "../../components/footer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { reactorTypeDefinitions } from "../../data/reactorTypeDefinitions";
-import { useQuery } from "@tanstack/react-query";
-import { getReactorByType, getReactorTypes } from "../../api/reactorsApi";
+import { useState } from 'react';
+import CategoryList from '../../components/category-list';
+import ReactorCard from '../../components/reactor-card';
+import Footer from '../../components/footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { reactorTypeDefinitions } from '../../data/reactorTypeDefinitions';
+import { useQuery } from '@tanstack/react-query';
+import { getReactorByType, getReactorTypes } from '../../api/reactorsApi';
 
 function Reactors() {
-  const [typeInput, setTypeInput] = useState("ALL");
+  const [typeInput, setTypeInput] = useState('ALL');
   const reactorTypeInfo = reactorTypeDefinitions[typeInput];
 
   // Fetch Reactor categories for side bar filtering
   const { data: reactorTypes, isLoading: isLoadingTypes } = useQuery({
-    queryKey: ["reactors", "types"],
+    queryKey: ['reactors', 'types'],
     queryFn: getReactorTypes,
   });
 
   // Fetch Reactors by reactor type (category)
   const { data: filteredReactors, isLoading: isLoadingFiltered } = useQuery({
-    queryKey: ["reactors", typeInput],
+    queryKey: ['reactors', typeInput],
     enabled: reactorTypes !== undefined, // when reactorTypes is undefined, query will not run.
     queryFn: () => getReactorByType(typeInput),
   });

@@ -1,5 +1,5 @@
-import { createTheme } from "@mui/material";
-import { blue, deepPurple } from "@mui/material/colors";
+import { createTheme } from '@mui/material';
+import { blue, deepPurple } from '@mui/material/colors';
 
 export const theme = createTheme({
   palette: {
@@ -8,16 +8,16 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: [
-      "Inter",
-      "-apple-system",
-      "BlinkMacSystemFont",
-      "Roboto",
+      'Inter',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      'Roboto',
       '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
+      'Arial',
+      'sans-serif',
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
-    ].join(","),
+    ].join(','),
   },
 });

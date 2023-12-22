@@ -1,5 +1,5 @@
-import { Box } from "@mui/material";
-import NavBar from "../../components/nav-bar";
+import { Box } from '@mui/material';
+import NavBar from '../../components/nav-bar';
 
 export default function UserManagement() {
   return (
