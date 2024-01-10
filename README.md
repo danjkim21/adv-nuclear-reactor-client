@@ -57,7 +57,7 @@ The data for this API project was obtained by creating a custom web scraper scri
 
 ## Getting Started
 
-This API can be accessed via [https://ardb.cyclic.app/api](https://ardb.cyclic.app/api) or as a local copy. To get a local copy up and running follow these simple example steps.
+This API can be accessed via [https://ardb-api.onrender.com/api](https://ardb-api.onrender.com/api) or as a local copy. To get a local copy up and running follow these simple example steps.
 
 ### Endpoints
 
