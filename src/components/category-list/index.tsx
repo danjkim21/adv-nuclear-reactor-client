@@ -3,7 +3,7 @@ import { Skeleton } from '@mui/material';
 interface CategoryListProps {
   categories: string[] | undefined;
   setTypeInput: (type: string) => void;
-  isLoading?: boolean;
+  isLoading: boolean;
 }
 
 function CategoryList({
