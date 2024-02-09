@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import CategoryList from '../../components/category-list';
-import ReactorCard from '../../components/reactor-card';
+import ReactorCardList from '../../components/reactor-card-list';
 import Footer from '../../components/footer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { reactorTypeDefinitions } from '../../data/reactorTypeDefinitions';
 import { useQuery } from '@tanstack/react-query';
 import { getReactorByType, getReactorTypes } from '../../api/reactorsApi';
@@ -21,7 +19,7 @@ function Reactors() {
   // Fetch Reactors by reactor type (category)
   const { data: filteredReactors, isLoading: isLoadingFiltered } = useQuery({
     queryKey: ['reactors', typeInput],
-    enabled: reactorTypes !== undefined, // when reactorTypes is undefined, query will not run.
+    // enabled: reactorTypes !== undefined, // when reactorTypes is undefined, query will not run.
     queryFn: () => getReactorByType(typeInput),
   });
 
@@ -46,30 +44,24 @@ function Reactors() {
         <div className="col col--side">
           <div className="container__sidebar">
             <h2 className="sidebar__title">Categories</h2>
-            {isLoadingTypes && <FontAwesomeIcon icon={faSpinner} spinPulse />}
-            {!isLoadingTypes && reactorTypes !== undefined && (
-              <CategoryList
-                categories={reactorTypes}
-                isLoading={isLoadingTypes}
-                setTypeInput={setTypeInput}
-              />
-            )}
+            <CategoryList
+              categories={reactorTypes}
+              isLoading={isLoadingTypes}
+              setTypeInput={setTypeInput}
+            />
           </div>
         </div>
         {/* Displays all reactors in cards */}
         <div className="col col--main">
           <div className="container__scrollMain">
+            {/* Section Display Description */}
             <h2>{reactorTypeInfo?.title && reactorTypeInfo.title}</h2>
             <p>{reactorTypeInfo?.desc && reactorTypeInfo.desc}</p>
-            {isLoadingFiltered && (
-              <FontAwesomeIcon icon={faSpinner} spinPulse />
-            )}
-            {!isLoadingFiltered && filteredReactors !== undefined && (
-              <ReactorCard
-                data={filteredReactors}
-                isLoading={isLoadingFiltered}
-              />
-            )}
+
+            <ReactorCardList
+              reactors={filteredReactors}
+              isLoading={isLoadingFiltered}
+            />
           </div>
         </div>
       </div>
