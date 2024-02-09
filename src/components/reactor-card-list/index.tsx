@@ -12,10 +12,10 @@ function ReactorCardList({ reactors, isLoading }: ReactorCardListInterface) {
     // TODO: figure out how to make skeleton auto fit width of parent container
     return (
       <div className="container container__cards container__cards--all">
-        <Skeleton variant="rounded" height={255} width={350} />
-        <Skeleton variant="rounded" height={255} width={350} />
-        <Skeleton variant="rounded" height={255} width={350} />
-        <Skeleton variant="rounded" height={255} width={350} />
+        <Skeleton variant="rounded" height={255} width={300} />
+        <Skeleton variant="rounded" height={255} width={300} />
+        <Skeleton variant="rounded" height={255} width={300} />
+        <Skeleton variant="rounded" height={255} width={300} />
       </div>
     );
   }
