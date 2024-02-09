@@ -57,25 +57,25 @@ The data for this API project was obtained by creating a custom web scraper scri
 
 ## Getting Started
 
-This API can be accessed via [https://ardb-api.onrender.com/api](https://ardb-api.onrender.com/api) or as a local copy. To get a local copy up and running follow these simple example steps.
+This API can be accessed via [https://ardb1.cyclic.app/api](https://ardb1.cyclic.app/api) or as a local copy. To get a local copy up and running follow these simple example steps.
 
 ### Endpoints
 
 1. Return full API database
    ```
-   https://ardb-api.onrender.com/api
+   https://ardb1.cyclic.app/api
    ```
 2. Search API by Reactor Name
    ```
-   https://ardb-api.onrender.com/api/:reactorName
+   https://ardb1.cyclic.app/api/:reactorName
    ```
 3. Return List of all Reactor Types
    ```
-   https://ardb-api.onrender.com/api/categories
+   https://ardb1.cyclic.app/api/categories
    ```
 4. Search API by Reactor Types
    ```
-   https://ardb-api.onrender.com/api/categories/:reactorType
+   https://ardb1.cyclic.app/api/categories/:reactorType
    ```
 
 ### Installation

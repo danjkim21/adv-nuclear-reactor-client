@@ -1,4 +1,5 @@
-const AUTH_URL = 'https://ardb-api.onrender.com/api/';
+const AUTH_URL = 'https://ardb1.cyclic.app/auth/';
+// const AUTH_URL = 'https://ardb-api.onrender.com/api/';
 
 export const login = async ({
   username,

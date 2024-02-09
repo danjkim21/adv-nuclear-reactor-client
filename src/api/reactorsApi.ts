@@ -1,8 +1,8 @@
 import { ReactorInterface } from '../types/reactors';
 import axios from 'axios';
 
-// const API_URL = 'https://ardb1.cyclic.app/api/';
-const API_URL = 'https://ardb-api.onrender.com/api/';
+const API_URL = 'https://ardb1.cyclic.app/api/';
+// const API_URL = 'https://ardb-api.onrender.com/api/';
 
 export const getReactors = async (): Promise<ReactorInterface[]> => {
   const response = await axios.get(`${API_URL}`);
