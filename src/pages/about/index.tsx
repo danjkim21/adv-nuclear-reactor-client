@@ -49,16 +49,16 @@ function About() {
         <h2>Endpoints</h2>
         <div className="container">
           <h3>Return Full API Database</h3>
-          <pre>https://ardb1.cyclic.app/api</pre>
+          <pre>https://api-ardb.vercel.app/api</pre>
           <h3>Search API by Reactor Name</h3>
           <pre>
-            https://ardb1.cyclic.app/api/<span>:reactor name</span>
+            https://api-ardb.vercel.app/api/<span>:reactor name</span>
           </pre>
           <h3>Return List of all Reactor Types</h3>
-          <pre>https://ardb1.cyclic.app/api/categories</pre>
+          <pre>https://api-ardb.vercel.app/api/categories</pre>
           <h3>Search API by Reactor Types</h3>
           <pre>
-            https://ardb1.cyclic.app/api/categories/
+            https://api-ardb.vercel.app/api/categories/
             <span>:reactor type</span>
           </pre>
         </div>
