@@ -261,36 +261,36 @@ html {
 /* Reactor Input Display area */
 .section__displayArea {
   color: variables.$grey__medium;
-}
-.section__displayArea {
   height: auto;
   padding-top: 6.25rem;
   padding-bottom: 6.25rem;
   background-color: variables.$purple__light--extra;
   border-top: 1px solid variables.$grey__light;
-}
-.title__reactorName {
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-  margin-bottom: 0;
-}
-.subtitle__reactorFullName, .subtitle__reactorUpdatedAt {
-  margin-top: 0.35rem;
-  margin-bottom: 0.55rem;
-}
-.subtitle__link {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: variables.$purple__accent--primary;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
+  
+  .title__reactorName {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 0;
+  }
+  .subtitle__reactorFullName, .subtitle__reactorUpdatedAt {
+    margin-top: 0.35rem;
+    margin-bottom: 0.55rem;
+  }
+  .subtitle__link {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: variables.$purple__accent--primary;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .subtitle__reactorUpdatedAt {
+    font-size: 0.875rem;
+    font-weight: 500;
   }
 }
-.subtitle__reactorUpdatedAt {
-  font-size: 0.875rem;
-  font-weight: 500;
-}
+
 
 .container__cards {
   max-width: auto;
@@ -305,28 +305,32 @@ html {
   width: 245px;
   padding: 1rem;
   overflow-y: auto;
+
+  .card__title {
+    color: variables.$purple__accent2--secondary;
+    color: rgba(101, 108, 246, 0.839);
+    margin-top: 0;
+  }
+  .subcontainer__cardDetail {
+    display: flex;
+
+    .reactorData__icon {
+      color: variables.$purple__accent--primary;
+      color: variables.$purple__secondary;
+      font-size: 1.55rem;
+      margin-right: 1rem;
+    }
+
+    .reactorData__detail {
+      color: variables.$purple__accent--primary;
+      color: variables.$purple__secondary;
+      font-size: 1.55rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem 0;
+    }
+  }
 }
-.card__title {
-  color: variables.$purple__accent2--secondary;
-  color: rgba(101, 108, 246, 0.839);
-  margin-top: 0;
-}
-.subcontainer__cardDetail {
-  display: flex;
-}
-.reactorData__icon {
-  color: variables.$purple__accent--primary;
-  color: variables.$purple__secondary;
-  font-size: 1.55rem;
-  margin-right: 1rem;
-}
-.reactorData__detail {
-  color: variables.$purple__accent--primary;
-  color: variables.$purple__secondary;
-  font-size: 1.55rem;
-  font-weight: 600;
-  margin: 0 0 0.25rem 0;
-}
+
 .container__tables {
   max-width: 100%;
   display: flex;
@@ -662,17 +666,20 @@ pre > span {
   }
   .card__reactorData {
     height: 165px;
-    width: 170px;
+    width: 85%;
     padding: 1rem;
-  }
-  .card__title {
-    font-size: 1rem;
-  }
-  .reactorData__icon {
-    font-size: 1.15rem;
-  }
-  .reactorData__detail {
-    font-size: 1.15rem;
+    
+    .card__title {
+      font-size: 1rem;
+    }
+    .subcontainer__cardDetail {
+      .reactorData__icon {
+        font-size: 2rem;
+      }
+      .reactorData__detail {
+        font-size: 1.45rem;
+      }
+    }
   }
   /* View all reactors Page */
   .container__flex {
