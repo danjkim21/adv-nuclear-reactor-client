@@ -274,17 +274,22 @@ html {
   line-height: 2.5rem;
   margin-bottom: 0;
 }
-.subtitle__reactorFullName {
+.subtitle__reactorFullName, .subtitle__reactorUpdatedAt {
   margin-top: 0.35rem;
-  font-size: 1.25rem;
-  font-weight: 600;
+  margin-bottom: 0.55rem;
 }
 .subtitle__link {
+  font-size: 1.25rem;
+  font-weight: 600;
   color: variables.$purple__accent--primary;
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
-.subtitle__link:hover {
-  text-decoration: underline;
+.subtitle__reactorUpdatedAt {
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .container__cards {
