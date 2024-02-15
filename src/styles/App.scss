@@ -705,6 +705,9 @@ pre > span {
   .tableModal__title {
     width: 100%;
   }
+  .modal__window > .modal__inner {
+    padding: 1rem;
+  }
   /* About page */
   .container__body {
     width: 100%;
