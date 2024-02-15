@@ -53,7 +53,7 @@ function Reactors() {
         </div>
         {/* Displays all reactors in cards */}
         <div className="col col--main">
-          <div className="container__scrollMain">
+          <div id="content" className="container__scrollMain">
             {/* Section Display Description */}
             <h2>{reactorTypeInfo?.title && reactorTypeInfo.title}</h2>
             <p>{reactorTypeInfo?.desc && reactorTypeInfo.desc}</p>

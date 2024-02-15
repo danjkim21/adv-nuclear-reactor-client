@@ -5,12 +5,15 @@ import TableCore from './TableCore';
 import TableMaterials from './TableMaterials';
 import TablePressureVessel from './TablePressureVessel';
 import { ReactorInterface } from '../../types/reactors';
+import convertIsoToHumanReadable from '../../utils/convertDateTime';
 
 interface ReactorDisplayProps {
   reactorData: ReactorInterface;
 }
 
 function ReactorDisplay({ reactorData }: ReactorDisplayProps) {
+  const lastUpdatedString = convertIsoToHumanReadable(reactorData.updatedAt);
+
   return (
     <section id="displayResultArea" className="section__displayArea">
       <div className="container container__reactorTitle">
@@ -26,6 +29,9 @@ function ReactorDisplay({ reactorData }: ReactorDisplayProps) {
           >
             {reactorData.fullName}
           </a>
+        </p>
+        <p className="subtitle__reactorUpdatedAt">
+          Last Updated: {lastUpdatedString}
         </p>
       </div>
       {/* Top Line Data */}

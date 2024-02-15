@@ -29,7 +29,7 @@ function CategoryList({
   const categoryListItem = categories.map((type) => {
     return (
       <li className="categoryList__item" key={type} onClick={filterDataByType}>
-        {type}
+        <a href="#content">{type}</a>
       </li>
     );
   });

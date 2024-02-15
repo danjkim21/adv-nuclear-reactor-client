@@ -261,31 +261,36 @@ html {
 /* Reactor Input Display area */
 .section__displayArea {
   color: variables.$grey__medium;
-}
-.section__displayArea {
   height: auto;
   padding-top: 6.25rem;
   padding-bottom: 6.25rem;
   background-color: variables.$purple__light--extra;
   border-top: 1px solid variables.$grey__light;
+  
+  .title__reactorName {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 0;
+  }
+  .subtitle__reactorFullName, .subtitle__reactorUpdatedAt {
+    margin-top: 0.35rem;
+    margin-bottom: 0.55rem;
+  }
+  .subtitle__link {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: variables.$purple__accent--primary;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .subtitle__reactorUpdatedAt {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
 }
-.title__reactorName {
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-  margin-bottom: 0;
-}
-.subtitle__reactorFullName {
-  margin-top: 0.35rem;
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-.subtitle__link {
-  color: variables.$purple__accent--primary;
-  text-decoration: none;
-}
-.subtitle__link:hover {
-  text-decoration: underline;
-}
+
 
 .container__cards {
   max-width: auto;
@@ -300,28 +305,32 @@ html {
   width: 245px;
   padding: 1rem;
   overflow-y: auto;
+
+  .card__title {
+    color: variables.$purple__accent2--secondary;
+    color: rgba(101, 108, 246, 0.839);
+    margin-top: 0;
+  }
+  .subcontainer__cardDetail {
+    display: flex;
+
+    .reactorData__icon {
+      color: variables.$purple__accent--primary;
+      color: variables.$purple__secondary;
+      font-size: 1.55rem;
+      margin-right: 1rem;
+    }
+
+    .reactorData__detail {
+      color: variables.$purple__accent--primary;
+      color: variables.$purple__secondary;
+      font-size: 1.55rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem 0;
+    }
+  }
 }
-.card__title {
-  color: variables.$purple__accent2--secondary;
-  color: rgba(101, 108, 246, 0.839);
-  margin-top: 0;
-}
-.subcontainer__cardDetail {
-  display: flex;
-}
-.reactorData__icon {
-  color: variables.$purple__accent--primary;
-  color: variables.$purple__secondary;
-  font-size: 1.55rem;
-  margin-right: 1rem;
-}
-.reactorData__detail {
-  color: variables.$purple__accent--primary;
-  color: variables.$purple__secondary;
-  font-size: 1.55rem;
-  font-weight: 600;
-  margin: 0 0 0.25rem 0;
-}
+
 .container__tables {
   max-width: 100%;
   display: flex;
@@ -432,13 +441,24 @@ html {
   border-radius: 4px;
   font-size: 1.1rem;
   font-weight: 500;
-  padding: 1rem;
   transition: all ease-in-out 75ms;
-}
-.categoryList__item:hover {
-  cursor: pointer;
-  color: variables.$purple__light--extra;
-  background-color: variables.$purple__primary;
+  
+  &:hover {
+    cursor: pointer;
+    color: variables.$purple__light--extra;
+    background-color: variables.$purple__primary;
+  }
+  
+  a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    text-decoration: none;
+
+    &:visited {
+      color: inherit;
+    }
+  }
 }
 
 .container__cards--all {
@@ -579,6 +599,15 @@ pre > span {
   .card__reactorData--all {
     width: 85.5%;
   }
+  .container__sidebar {
+    padding: 1rem;
+
+    .categoryList__item {
+      a {
+        padding: 0.875rem;
+      }
+    }
+  }
 }
 
 /* sm */
@@ -657,17 +686,20 @@ pre > span {
   }
   .card__reactorData {
     height: 165px;
-    width: 170px;
+    width: 85%;
     padding: 1rem;
-  }
-  .card__title {
-    font-size: 1rem;
-  }
-  .reactorData__icon {
-    font-size: 1.15rem;
-  }
-  .reactorData__detail {
-    font-size: 1.15rem;
+    
+    .card__title {
+      font-size: 1rem;
+    }
+    .subcontainer__cardDetail {
+      .reactorData__icon {
+        font-size: 2rem;
+      }
+      .reactorData__detail {
+        font-size: 1.45rem;
+      }
+    }
   }
   /* View all reactors Page */
   .container__flex {
@@ -692,6 +724,9 @@ pre > span {
   }
   .tableModal__title {
     width: 100%;
+  }
+  .modal__window > .modal__inner {
+    padding: 1rem;
   }
   /* About page */
   .container__body {

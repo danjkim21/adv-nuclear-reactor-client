@@ -50,4 +50,5 @@ export interface ReactorInterface {
   baseMaterial: string;
   totHeightInside: string;
   transportWeight: string;
+  updatedAt: string;
 }

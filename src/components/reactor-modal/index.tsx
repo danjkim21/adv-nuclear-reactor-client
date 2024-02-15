@@ -1,18 +1,23 @@
 import { ReactorInterface } from '../../types/reactors';
+import convertIsoToHumanReadable from '../../utils/convertDateTime';
 
 interface ReactorModalProps {
   reactor: ReactorInterface;
 }
 
 function ReactorModal({ reactor }: ReactorModalProps) {
+  const lastUpdatedString = convertIsoToHumanReadable(reactor.updatedAt);
+
   return (
     <div id={reactor.name} className="modal__window">
       <div className="modal__inner">
         <a href="#" title="Close" className="modal__close">
           Close
         </a>
-        <h3 className="card__title">{reactor.name}</h3>
-        <p className="card__subtitle">{reactor.fullName}</p>
+        <h3 className="card__title">
+          {reactor.name} - {reactor.fullName}
+        </h3>
+        <p className="card__subtitle">Last Updated: {lastUpdatedString}</p>
 
         <table className="table tableModal">
           <thead className="tableModal__title">
