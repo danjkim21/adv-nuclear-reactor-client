@@ -441,13 +441,24 @@ html {
   border-radius: 4px;
   font-size: 1.1rem;
   font-weight: 500;
-  padding: 1rem;
   transition: all ease-in-out 75ms;
-}
-.categoryList__item:hover {
-  cursor: pointer;
-  color: variables.$purple__light--extra;
-  background-color: variables.$purple__primary;
+  
+  &:hover {
+    cursor: pointer;
+    color: variables.$purple__light--extra;
+    background-color: variables.$purple__primary;
+  }
+  
+  a {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    text-decoration: none;
+
+    &:visited {
+      color: inherit;
+    }
+  }
 }
 
 .container__cards--all {
@@ -587,6 +598,15 @@ pre > span {
   /* View all reactors Page */
   .card__reactorData--all {
     width: 85.5%;
+  }
+  .container__sidebar {
+    padding: 1rem;
+
+    .categoryList__item {
+      a {
+        padding: 0.875rem;
+      }
+    }
   }
 }
 
