@@ -16,11 +16,7 @@ export default function LoginForm() {
   const [userData, setUserData]: [UserInterface, Dispatch<UserInterface>] =
     useLocalStorage<any>('userData', null);
 
-  const {
-    mutate: loginMutate,
-    isError,
-    error,
-  } = useMutation({
+  const { mutateAsync: loginMutate } = useMutation({
     mutationFn: login,
   });
 
@@ -31,16 +27,30 @@ export default function LoginForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorMessage('');
 
-    loginMutate({ username: formData.username, password: formData.password });
+    try {
+      const result = await loginMutate({
+        username: formData.username,
+        password: formData.password,
+      });
 
-    if (isError) {
-      setErrorMessage(JSON.stringify(error));
-      return; // Exit function early if error occurs
+      setUserData({
+        username: result.username,
+        role: result.role,
+        verified: result.verified,
+        authenticated: true,
+      });
+      navigate('/dashboard');
+    } catch (err) {
+      const msg =
+        err instanceof Error
+          ? err.message
+          : typeof err === 'string'
+            ? err
+            : 'Login failed';
+      setErrorMessage(msg);
     }
-
-    setUserData({ username: formData.username, authenticated: true });
-    navigate('/dashboard');
   };
 
   return (
