@@ -10,16 +10,13 @@ function Reactors() {
   const [typeInput, setTypeInput] = useState('ALL');
   const reactorTypeInfo = reactorTypeDefinitions[typeInput];
 
-  // Fetch Reactor categories for side bar filtering
   const { data: reactorTypes, isLoading: isLoadingTypes } = useQuery({
     queryKey: ['reactors', 'types'],
     queryFn: getReactorTypes,
   });
 
-  // Fetch Reactors by reactor type (category)
   const { data: filteredReactors, isLoading: isLoadingFiltered } = useQuery({
     queryKey: ['reactors', typeInput],
-    // enabled: reactorTypes !== undefined, // when reactorTypes is undefined, query will not run.
     queryFn: () => getReactorByType(typeInput),
   });
 
@@ -40,7 +37,6 @@ function Reactors() {
         </div>
       </div>
       <div className="container container__flex">
-        {/* sidebar containing filtering for reactors */}
         <div className="col col--side">
           <div className="container__sidebar">
             <h2 className="sidebar__title">Categories</h2>
@@ -48,13 +44,12 @@ function Reactors() {
               categories={reactorTypes}
               isLoading={isLoadingTypes}
               setTypeInput={setTypeInput}
+              selectedType={typeInput}
             />
           </div>
         </div>
-        {/* Displays all reactors in cards */}
         <div className="col col--main">
           <div id="content" className="container__scrollMain">
-            {/* Section Display Description */}
             <h2>{reactorTypeInfo?.title && reactorTypeInfo.title}</h2>
             <p>{reactorTypeInfo?.desc && reactorTypeInfo.desc}</p>
 

@@ -20,8 +20,6 @@ export default function Profile() {
   const [userData, setUserData]: [UserInterface, Dispatch<UserInterface>] =
     useLocalStorage<any>('userData', null);
 
-  console.log(userData);
-
   return (
     <Box component="main" sx={{ p: 3 }}>
       <NavBar />
