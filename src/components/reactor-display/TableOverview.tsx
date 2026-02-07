@@ -1,5 +1,4 @@
 import { ReactorInterface } from '../../types/reactors';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBuilding,
   faGlobe,
@@ -9,6 +8,9 @@ import {
   faWaveSquare,
   faDroplet,
   faBolt,
+  faIndustry,
+  faSnowflake,
+  faFire,
 } from '@fortawesome/free-solid-svg-icons';
 import DataRow from '../reactor-data-row';
 
@@ -45,27 +47,19 @@ function TableOverview({ reactorData }: TableOverviewProps) {
             label="Country of Origin"
             value={reactorData.country}
           />
-          <div className="data-row">
-            <div className="data-row__label">
-              <FontAwesomeIcon
-                icon={faCheckCircle}
-                className="data-row__icon"
-              />
-              <span>Design Status</span>
-            </div>
-            <div className="data-row__value">
-              <span className={getStatusBadgeClass(reactorData.designStatus)}>
-                {reactorData.designStatus}
-              </span>
-            </div>
-          </div>
+          <DataRow
+            icon={faCheckCircle}
+            label="Design Status"
+            value={reactorData.designStatus}
+            badgeClass={getStatusBadgeClass(reactorData.designStatus)}
+          />
           <DataRow
             icon={faBullseye}
             label="Purpose"
             value={reactorData.purpose}
           />
           <DataRow
-            icon={faBullseye}
+            icon={faIndustry}
             label="Non-electrical Applications"
             value={reactorData.nonElecApplications || 'n/a'}
           />
@@ -89,7 +83,7 @@ function TableOverview({ reactorData }: TableOverviewProps) {
             value={reactorData.coolant}
           />
           <DataRow
-            icon={faDroplet}
+            icon={faSnowflake}
             label="Moderator"
             value={reactorData.moderator}
           />
@@ -97,33 +91,39 @@ function TableOverview({ reactorData }: TableOverviewProps) {
 
         <div className="table-section">
           <h4 className="table-section__title">Power Output</h4>
-          <div className="data-row data-row--highlight">
-            <div className="data-row__label">
-              <FontAwesomeIcon icon={faBolt} className="data-row__icon" />
-              <span>Net Output</span>
-            </div>
-            <div className="data-row__value data-row__value--large">
-              {reactorData.outputNet} <span className="unit">MWe</span>
-            </div>
-          </div>
-          <div className="data-row data-row--highlight">
-            <div className="data-row__label">
-              <FontAwesomeIcon icon={faBolt} className="data-row__icon" />
-              <span>Gross Output</span>
-            </div>
-            <div className="data-row__value data-row__value--large">
-              {reactorData.outputGross} <span className="unit">MWe</span>
-            </div>
-          </div>
-          <div className="data-row data-row--highlight">
-            <div className="data-row__label">
-              <FontAwesomeIcon icon={faBolt} className="data-row__icon" />
-              <span>Thermal Output</span>
-            </div>
-            <div className="data-row__value data-row__value--large">
-              {reactorData.thermalOutput} <span className="unit">MWth</span>
-            </div>
-          </div>
+          <DataRow
+            icon={faBolt}
+            label="Net Output"
+            value={
+              <>
+                {reactorData.outputNet} <span className="unit">MWe</span>
+              </>
+            }
+            highlight={true}
+            largeValue={true}
+          />
+          <DataRow
+            icon={faBolt}
+            label="Gross Output"
+            value={
+              <>
+                {reactorData.outputGross} <span className="unit">MWe</span>
+              </>
+            }
+            highlight={true}
+            largeValue={true}
+          />
+          <DataRow
+            icon={faFire}
+            label="Thermal Output"
+            value={
+              <>
+                {reactorData.thermalOutput} <span className="unit">MWth</span>
+              </>
+            }
+            highlight={true}
+            largeValue={true}
+          />
         </div>
       </div>
     </div>
