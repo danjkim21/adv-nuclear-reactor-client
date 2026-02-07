@@ -1,4 +1,4 @@
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridToolbar } from '@mui/x-data-grid';
 import { CircularProgress } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import { getReactors } from '../../../../api/reactorsApi';
@@ -55,7 +55,14 @@ export default function ReactorTable() {
             return { ...reactor, id: reactor._id };
           })}
           columns={columns}
-          // checkboxSelection
+          slots={{
+            toolbar: GridToolbar,
+          }}
+          slotProps={{
+            toolbar: {
+              showQuickFilter: true,
+            },
+          }}
         />
       )}
     </div>
